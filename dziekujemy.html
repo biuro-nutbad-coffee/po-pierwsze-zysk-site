@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dziękujemy | Po-Pierwsze-Zysk.pl</title>
+  <meta name="robots" content="noindex,follow">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f6f4;
+      --panel: #ffffff;
+      --text: #11211d;
+      --muted: #4a5b55;
+      --primary: #2f9f76;
+      --primary-hover: #258764;
+      --border: #d7e2dc;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 1.2rem;
+    }
+
+    .card {
+      width: min(680px, 100%);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem 1.2rem;
+      box-shadow: 0 16px 40px rgba(7, 22, 16, 0.08);
+    }
+
+    h1 {
+      margin: 0 0 0.6rem;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0 0 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.7rem 1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      color: #fff;
+      background: var(--primary);
+    }
+
+    .btn:hover { background: var(--primary-hover); }
+  </style>
+</head>
+<body>
+  <main class="card" aria-live="polite">
+    <h1>Dziękujemy za kontakt.</h1>
+    <p>Formularz został wysłany poprawnie. Wrócimy z odpowiedzią możliwie szybko, zwykle w ciągu 24h w dni robocze.</p>
+    <p>Jeśli sprawa jest pilna, zadzwoń: <strong>513 013 580</strong>.</p>
+    <a class="btn" href="/">Wróć na stronę główną</a>
+  </main>
+</body>
+</html>

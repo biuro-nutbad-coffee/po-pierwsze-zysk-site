@@ -1,0 +1,1692 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Po pierwsze: zysk - DEEP GREEN</title>
+  <meta name="description" content="Księgowość dla JDG i mikro spółek z o.o. Jasne pakiety, czytelne limity i szybki start bez chaosu.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f2a23'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial' font-size='24' fill='%23d8efe7'%3EPZ%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    window.PIERWSZE_ZYSK_SITE = window.PIERWSZE_ZYSK_SITE || {};
+    // GA4 dla tej strony (osobna usługa w tym samym koncie GA4).
+    window.PIERWSZE_ZYSK_SITE.gaMeasurementId = "G-PWDPCYBSS1";
+    // Wklej tutaj ID Meta Pixel (same cyfry z Events Manager).
+    window.PIERWSZE_ZYSK_SITE.metaPixelId = "1499652211791774";
+    // Klucz localStorage dla atrybucji kampanii.
+    window.PIERWSZE_ZYSK_SITE.attributionStorageKey = "ppz_attribution_v1";
+
+    (function () {
+      var key = window.PIERWSZE_ZYSK_SITE.attributionStorageKey || "ppz_attribution_v1";
+      var params = new URLSearchParams(window.location.search || "");
+      var fields = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid", "fbclid", "msclkid"];
+      var updates = {};
+      var hasAny = false;
+
+      fields.forEach(function (f) {
+        var v = params.get(f);
+        if (typeof v === "string" && v.trim() !== "") {
+          updates[f] = v.trim();
+          hasAny = true;
+        }
+      });
+
+      if (!hasAny) return;
+
+      try {
+        var current = {};
+        var raw = window.localStorage.getItem(key);
+        if (raw) current = JSON.parse(raw) || {};
+
+        fields.forEach(function (f) {
+          if (updates[f]) current[f] = updates[f];
+        });
+
+        if (!current.first_touch_at) current.first_touch_at = new Date().toISOString();
+        current.last_touch_at = new Date().toISOString();
+        if (!current.landing_page) current.landing_page = window.location.href || "";
+        current.last_page = window.location.href || "";
+        if (!current.referrer && document.referrer) current.referrer = document.referrer;
+
+        window.localStorage.setItem(key, JSON.stringify(current));
+      } catch (e) {}
+    })();
+  </script>
+  <script>
+    (function () {
+      var mid = (window.PIERWSZE_ZYSK_SITE && window.PIERWSZE_ZYSK_SITE.gaMeasurementId) || "";
+      if (typeof mid !== "string" || !/^G-[A-Z0-9]+$/.test(mid)) return;
+
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () {
+        window.dataLayer.push(arguments);
+      };
+
+      var ga = document.createElement("script");
+      ga.async = true;
+      ga.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(mid);
+      document.head.appendChild(ga);
+
+      window.gtag("js", new Date());
+      window.gtag("config", mid);
+    })();
+  </script>
+  <script>
+    (function () {
+      var pid = (window.PIERWSZE_ZYSK_SITE && window.PIERWSZE_ZYSK_SITE.metaPixelId) || "";
+      if (typeof pid !== "string" || !/^\d{8,20}$/.test(pid)) return;
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+      window.fbq("init", pid);
+      window.fbq("track", "PageView");
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #0f1e1a;
+      --surface: #142a24;
+      --surface-soft: #1b3630;
+      --text: #eaf4f0;
+      --text-muted: #b8d0c8;
+      --border: #2f4f46;
+      --primary: #2f8f72;
+      --primary-strong: #226a55;
+      --accent: #6eb7a0;
+      --shadow: 0 14px 34px rgba(0, 0, 0, 0.3);
+      --radius: 16px;
+      --maxw: 1140px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 520px at 20% -8%, rgba(47,143,114,0.22), transparent 62%),
+        radial-gradient(1000px 450px at 88% -12%, rgba(110,183,160,0.14), transparent 62%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(var(--maxw), 92vw);
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(47, 79, 70, 0.92);
+      background: rgba(15, 30, 26, 0.92);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: clamp(1.12rem, 1.7vw, 1.36rem);
+      letter-spacing: 0.01em;
+      font-family: "Bricolage Grotesque", Inter, sans-serif;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.94rem;
+      transition: color 180ms ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      padding: 0.8rem 1.25rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(47, 143, 114, 0.35);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #3ea687);
+      color: #fff;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible { background: linear-gradient(135deg, var(--primary-strong), #2f8f72); }
+
+    .btn-ghost {
+      border-color: rgba(16, 35, 29, 0.28);
+      background: rgba(255,255,255,0.95);
+      color: #10231d;
+    }
+
+    .btn-ghost:hover,
+    .btn-ghost:focus-visible {
+      background: #ffffff;
+      color: #081711;
+      border-color: rgba(16, 35, 29, 0.45);
+    }
+
+    .hero {
+      padding: 5.5rem 0 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin: 0 0 0.85rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(110, 183, 160, 0.45);
+      background: rgba(110, 183, 160, 0.14);
+      color: #d8efe7;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Bricolage Grotesque", Inter, sans-serif;
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 1.07;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      margin: 1rem 0 0;
+      color: var(--text-muted);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      max-width: 66ch;
+    }
+
+    .hero-cta {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      margin-top: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: 1rem 1.1rem;
+    }
+
+    .hero-note ul {
+      margin: 0.5rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    section {
+      padding: 3.7rem 0;
+    }
+
+    h2 {
+      margin: 0 0 0.9rem;
+      font-size: clamp(1.6rem, 2.8vw, 2.35rem);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+    }
+
+    .section-intro {
+      margin: 0 0 1.6rem;
+      color: var(--text-muted);
+      max-width: 70ch;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1rem;
+      box-shadow: var(--shadow);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .card:hover,
+    .card:focus-within {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.32);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--text-muted);
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    .list li + li { margin-top: 0.45rem; }
+
+    .split {
+      display: grid;
+      gap: 1.1rem;
+      grid-template-columns: 1fr;
+    }
+
+    .pricing {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    .pricing-switch {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-switch-btn {
+      border: 1px solid rgba(16, 35, 29, 0.35);
+      border-radius: 999px;
+      background: #eef6f3;
+      color: #10231d;
+      padding: 0.62rem 1rem;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
+    }
+
+    .pricing-switch-btn:hover,
+    .pricing-switch-btn:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(47, 143, 114, 0.9);
+      background: #ffffff;
+      color: #081711;
+    }
+
+    .pricing-switch-btn[aria-pressed="true"] {
+      background: linear-gradient(135deg, var(--primary), #3ea687);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .pricing-group {
+      display: none;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    .pricing-group.is-active {
+      display: grid;
+    }
+
+    .price-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, #18362e, #142a24);
+      box-shadow: var(--shadow);
+      padding: 1.2rem;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px rgba(47, 143, 114, 0.25);
+    }
+
+    .price-name {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .price-value {
+      margin: 0.25rem 0 0.7rem;
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+
+    .price-note {
+      margin-top: 1rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .calc-wrap {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    .calc-panel {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: 1rem;
+    }
+
+    .calc-grid {
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: 1fr;
+    }
+
+    .calc-field {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .calc-field-full {
+      grid-column: 1 / -1;
+    }
+
+    .calc-field label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .calc-field input,
+    .calc-field select {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #10241f;
+      color: var(--text);
+      padding: 0.65rem 0.7rem;
+      font: inherit;
+    }
+
+    .calc-field select,
+    .contact-field select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image:
+        linear-gradient(45deg, transparent 50%, #a8c6bc 50%),
+        linear-gradient(135deg, #a8c6bc 50%, transparent 50%),
+        linear-gradient(to right, rgba(47, 79, 70, 0.95), rgba(47, 79, 70, 0.95));
+      background-position:
+        calc(100% - 17px) calc(50% - 3px),
+        calc(100% - 12px) calc(50% - 3px),
+        calc(100% - 2.3rem) 50%;
+      background-size: 5px 5px, 5px 5px, 1px 1.55rem;
+      background-repeat: no-repeat;
+      padding-right: 2.7rem;
+      cursor: pointer;
+      transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    .calc-field select:hover,
+    .contact-field select:hover {
+      border-color: rgba(62, 166, 135, 0.7);
+      background-color: #123129;
+    }
+
+    .calc-field input:focus-visible,
+    .calc-field select:focus-visible {
+      outline: 2px solid rgba(62, 166, 135, 0.5);
+      outline-offset: 1px;
+      border-color: rgba(62, 166, 135, 0.6);
+    }
+
+    .calc-field input[type="range"] {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      accent-color: var(--primary);
+    }
+
+    .calc-range-row {
+      display: grid;
+      gap: 0.6rem;
+      grid-template-columns: 1fr 96px;
+      align-items: center;
+    }
+
+    .calc-number {
+      text-align: right;
+      font-weight: 700;
+      appearance: textfield;
+      -moz-appearance: textfield;
+    }
+
+    .calc-number::-webkit-outer-spin-button,
+    .calc-number::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .slider-val {
+      display: inline-block;
+      min-width: 2.1rem;
+      padding: 0.08rem 0.45rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #10241f;
+      color: var(--text);
+      text-align: center;
+      font-size: 0.84rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .calc-hint {
+      margin: 0.1rem 0 0;
+      color: var(--text-muted);
+      font-size: 0.84rem;
+    }
+
+    .calc-result {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .calc-total {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    .calc-breakdown {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.45rem;
+      color: var(--text-muted);
+    }
+
+    .calc-breakdown li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px dashed var(--border);
+      padding-bottom: 0.35rem;
+      font-size: 0.95rem;
+    }
+
+    .faq {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .faq-item + .faq-item { border-top: 1px solid var(--border); }
+
+    .faq-q {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      text-align: left;
+      padding: 1rem 1rem;
+      font: inherit;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+    }
+
+    .faq-q:hover { background: var(--surface-soft); }
+
+    .faq-q .chevron {
+      transition: transform 220ms ease;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .faq-q[aria-expanded="true"] .chevron { transform: rotate(180deg); }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 240ms ease;
+    }
+
+    .faq-a p {
+      margin: 0;
+      padding: 0 1rem 1rem;
+      color: var(--text-muted);
+    }
+
+    .cta-band {
+      border: 1px solid rgba(110, 183, 160, 0.45);
+      border-radius: calc(var(--radius) + 2px);
+      background: linear-gradient(140deg, rgba(47,143,114,0.2), rgba(110,183,160,0.15));
+      padding: 1.4rem;
+    }
+
+    .cta-band h2 { margin-bottom: 0.6rem; }
+
+    .contact-layout {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(15, 30, 26, 0.45);
+      padding: 1rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: 1fr;
+    }
+
+    .contact-field {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .contact-field label {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .contact-field input,
+    .contact-field select,
+    .contact-field textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #10241f;
+      color: var(--text);
+      padding: 0.65rem 0.7rem;
+      font: inherit;
+    }
+
+    .contact-field textarea {
+      min-height: 108px;
+      resize: vertical;
+    }
+
+    .contact-field input:focus-visible,
+    .contact-field select:focus-visible,
+    .contact-field textarea:focus-visible {
+      outline: 2px solid rgba(62, 166, 135, 0.5);
+      outline-offset: 1px;
+      border-color: rgba(62, 166, 135, 0.6);
+    }
+
+    .contact-field-full {
+      grid-column: 1 / -1;
+    }
+
+    .contact-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      width: fit-content;
+    }
+
+    .contact-consent span {
+      line-height: 1.35;
+    }
+
+    .contact-consent input {
+      width: auto;
+      min-width: 1.05rem;
+      height: 1.05rem;
+      margin: 0.1rem 0 0;
+      flex: 0 0 auto;
+      accent-color: var(--primary);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .contact-side {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(15, 30, 26, 0.3);
+      padding: 1rem;
+      color: var(--text-muted);
+    }
+
+    .contact-side strong {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: var(--text);
+    }
+
+    .contact-side ul {
+      margin: 0.45rem 0 0;
+      padding-left: 1.1rem;
+    }
+
+    .contact-side p {
+      margin: 0.35rem 0 0;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 1.3rem 0 2.2rem;
+      color: var(--text-muted);
+      font-size: 0.93rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .footer a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .footer a:hover,
+    .footer a:focus-visible { text-decoration: underline; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 420ms ease, transform 420ms ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 760px) {
+      .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .split { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .pricing { grid-template-columns: 1fr; }
+      .pricing-group { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-grid { grid-template-columns: 1.2fr 0.8fr; }
+      .calc-wrap { grid-template-columns: 1.2fr 0.8fr; }
+      .calc-grid { grid-template-columns: 1fr; }
+      .contact-layout { grid-template-columns: 1.25fr 0.75fr; }
+      .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal, .card, .btn, .price-card, .faq-a, .faq-q .chevron {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" aria-label="Nagłówek strony">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top">Po pierwsze zysk - nowoczesna księgowość</a>
+      <nav class="nav" aria-label="Nawigacja główna">
+        <a href="#cennik">Cennik</a>
+        <a href="#kalkulator">Kalkulator</a>
+        <a href="./ryczalt-ewidencjonowany.html">Ryczałt</a>
+        <a href="./kpir-ksiega-przychodow-i-rozchodow.html">KPiR</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-primary" href="#kalkulator">Sprawdź wycenę</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <p class="hero-badge">Pełna integracja z KSeF</p>
+          <h1>Księgi pod kontrolą. Wynik firmy jasny co miesiąc.</h1>
+          <p class="lead">Księgi dla mikro spółek z o.o. i JDG ze Słupska i okolic: jasne pakiety, czytelne limity, szybki start bez chaosu.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#kalkulator">Sprawdź wycenę w 2 minuty</a>
+            <a class="btn btn-ghost" href="#kontakt">Porozmawiaj z ekspertem</a>
+          </div>
+        </div>
+        <aside class="hero-note reveal" aria-label="Dlaczego teraz">
+          <strong>Dlaczego teraz</strong>
+          <ul>
+            <li>W pełni integrujemy proces z KSeF i obiegiem dokumentów elektronicznych.</li>
+            <li>Obowiązków podatkowo-raportowych jest więcej, a margines na błąd jest mniejszy.</li>
+            <li>Brak porządku w dokumentach kosztuje czas i pieniądze właściciela.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="problem" class="container">
+      <h2 class="reveal">Czy to brzmi znajomo?</h2>
+      <p class="section-intro reveal">Nie masz jasnej odpowiedzi: "ile realnie zostaje na koniec miesiąca". Dokumenty i terminy wracają jak pożar co tydzień, a Ty dopinasz wszystko sam.</p>
+      <div class="cards">
+        <article class="card reveal"><p>Brak jasności finansowej i nieczytelny obraz kosztów.</p></article>
+        <article class="card reveal"><p>Chaos dokumentowy i terminowy (US/ZUS/VAT/CIT).</p></article>
+        <article class="card reveal"><p>Słaba komunikacja i brak czytelnych zasad współpracy.</p></article>
+      </div>
+      <div class="card reveal" style="margin-top:1rem;">
+        <strong>Koszt tego problemu</strong>
+        <ul class="list" style="margin-top:0.6rem;">
+          <li>Stracone godziny właściciela co tydzień na administrację i poprawki.</li>
+          <li>Ryzyko kosztów błędów, opóźnień i nieprzewidzianych dopłat.</li>
+          <li>Wolniejsze decyzje biznesowe, bo liczby są nieczytelne lub za późno.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="rozwiazanie" class="container">
+      <h2 class="reveal">Księgowość dla firm bez niedomówień</h2>
+      <p class="section-intro reveal">Abonamentowa obsługa księgowa z jasnymi limitami i dopłatami: wiesz za co płacisz i co miesiąc masz porządek.</p>
+      <div class="split">
+        <article class="card reveal">
+          <strong>Jak to działa</strong>
+          <ol class="list" style="margin-top:0.6rem;">
+            <li>Wybierasz pakiet (JDG lub KH) dopasowany do skali dokumentów.</li>
+            <li>Przechodzimy wdrożenie krok po kroku i ustawiamy prosty proces miesięczny.</li>
+            <li>Co miesiąc rozliczamy firmę zgodnie z ustalonym zakresem i limitami.</li>
+          </ol>
+        </article>
+        <article class="card reveal">
+          <strong>Co zyskujesz</strong>
+          <ul class="list" style="margin-top:0.6rem;">
+            <li>Jasność kosztów obsługi i zasad współpracy.</li>
+            <li>Mniej czasu właściciela na administrację.</li>
+            <li>Stabilność i przewidywalność w terminach.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="stack" class="container">
+      <h2 class="reveal">Co zawiera współpraca</h2>
+      <div class="split">
+        <article class="card reveal">
+          <strong>Główny zakres</strong>
+          <ul class="list" style="margin-top:0.6rem;">
+            <li>Prowadzenie księgowości wraz ze wszelkimi niezbędnymi ewidencjami.</li>
+            <li>Jasny zakres, limity i cennik dopłat ponad limit.</li>
+            <li>Rozliczenia z Urzędem Skarbowym (JPK, PIT, CIT, VAT itd.).</li>
+            <li>Rozliczenia z Zakładem Ubezpieczeń Społecznych (ZUS).</li>
+            <li>Raport właścicielski 1 strona / miesiąc: kluczowe liczby, ryzyka i 3 rekomendacje działań.</li>
+            <li>Dedykowany opiekun księgowy i standard odpowiedzi do 24h w dni robocze.</li>
+            <li>Obsługa dokumentów elektronicznych i KSeF w uzgodnionym zakresie.</li>
+            <li>Przypomnienia o kluczowych terminach podatkowych i ZUS.</li>
+            <li>Dajemy dostęp do oprogramowania wFirma:
+              <br>- stały dostęp online do faktur, rozliczeń i statusu płatności,
+              <br>- szybszy obieg dokumentów bez papieru (wystawianie i przekazywanie online),
+              <br>- automatyzacja powtarzalnych faktur i lepsza kontrola terminów płatności.
+            </li>
+          </ul>
+        </article>
+        <article class="card reveal">
+          <strong>Dodatki i zasady</strong>
+          <ul class="list" style="margin-top:0.6rem;">
+            <li>Dokumenty/FV sprzedażowe wystawione samodzielnie: bez limitu i bez dopłaty.</li>
+            <li>Kadry i place: 40 PLN netto / pracownik / mies.</li>
+            <li>Raport kasowy i walutowe rozliczane jako pozycje osobne.</li>
+            <li>Przejęcie księgowości z innego biura realizujemy krok po kroku według checklisty.</li>
+            <li>SLA v1: potwierdzenie wiadomości tego samego dnia roboczego.</li>
+            <li>SLA v1: odpowiedź merytoryczna maks. do 24h w dni robocze.</li>
+            <li>SLA v1: sprawy pilne (US/ZUS do 48h) - kontakt zwrotny tego samego dnia roboczego.</li>
+            <li>Bezpieczeństwo: obowiązkowe OC biura oraz archiwizacja dokumentów.</li>
+            <li>Każda usługa poza pakietem jest wcześniej uzgadniana i wyceniana.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="card reveal">
+        <h2 style="margin-top:0;">Onboarding bez chaosu (8 kroków)</h2>
+        <p class="section-intro" style="margin-bottom:0.5rem;">Od startu pracujemy na konkretnym planie przejęcia księgowości, żeby nie było przestoju ani domysłów.</p>
+        <ol class="list">
+          <li>Potwierdzenie pakietu, zakresu i cen.</li>
+          <li>Umowa + pełnomocnictwa + dane startowe.</li>
+          <li>Ustalenie zdalnego modelu przekazywania dokumentów.</li>
+          <li>Przejęcie danych od poprzedniego biura (jeśli dotyczy).</li>
+          <li>Ustawienie cyklu miesięcznego i checklisty terminów.</li>
+          <li>Pierwsze zamknięcie miesiąca.</li>
+          <li>Raport właścicielski 1 strona + rekomendacje.</li>
+          <li>Stabilizacja i korekta pakietu po pierwszym cyklu.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="cennik" class="container">
+      <h2 class="reveal">Inwestycja</h2>
+      <p class="section-intro reveal">Pakiety dla spółek z o.o. i JDG. Cennik i limity są jawne, a dopłaty działają tylko po przekroczeniu zakresu.</p>
+      <div class="pricing-switch reveal" role="group" aria-label="Typ księgowości">
+        <button class="pricing-switch-btn" type="button" aria-pressed="false" data-pricing-tab="ryczalt">Ryczałt</button>
+        <button class="pricing-switch-btn" type="button" aria-pressed="true" data-pricing-tab="kpir">Księga przychodów i rozchodów</button>
+        <button class="pricing-switch-btn" type="button" aria-pressed="false" data-pricing-tab="kh">Księgi handlowe</button>
+      </div>
+      <div class="pricing">
+        <div class="pricing-group" data-pricing-group="ryczalt">
+          <article class="price-card" aria-label="Pakiet JDG RYCZAŁT BEZ VAT">
+            <p class="price-name">JDG RYCZAŁT BEZ VAT</p>
+            <p class="price-value">149 PLN netto / mies.</p>
+            <ul class="list">
+              <li>Ryczałt ewidencjonowany</li>
+              <li>Dokumenty rozliczane w biurze do 25 / mies.</li>
+              <li>Dopłata ponad limit: 4 PLN / dokument</li>
+            </ul>
+            <a class="btn btn-primary" href="#kalkulator" style="margin-top:1rem;">Sprawdź wycenę</a>
+          </article>
+          <article class="price-card" aria-label="Pakiet JDG RYCZAŁT Z VAT">
+            <p class="price-name">JDG RYCZAŁT Z VAT</p>
+            <p class="price-value">249 PLN netto / mies.</p>
+            <ul class="list">
+              <li>Ryczałt ewidencjonowany + VAT</li>
+              <li>Dokumenty rozliczane w biurze do 25 / mies.</li>
+              <li>Dopłata ponad limit: 4 PLN / dokument</li>
+            </ul>
+            <a class="btn btn-ghost" href="#kalkulator" style="margin-top:1rem;">Sprawdź wycenę</a>
+          </article>
+        </div>
+
+        <div class="pricing-group is-active" data-pricing-group="kpir">
+          <article class="price-card" aria-label="Pakiet JDG KPiR BEZ VAT">
+            <p class="price-name">JDG KPiR BEZ VAT</p>
+            <p class="price-value">249 PLN netto / mies.</p>
+            <ul class="list">
+              <li>Księga przychodów i rozchodów</li>
+              <li>Dokumenty rozliczane w biurze do 25 / mies.</li>
+              <li>Dopłata ponad limit: 4 PLN / dokument</li>
+            </ul>
+            <a class="btn btn-primary" href="#kalkulator" style="margin-top:1rem;">Sprawdź wycenę</a>
+          </article>
+          <article class="price-card" aria-label="Pakiet JDG KPiR Z VAT">
+            <p class="price-name">JDG KPiR Z VAT</p>
+            <p class="price-value">349 PLN netto / mies.</p>
+            <ul class="list">
+              <li>Księga przychodów i rozchodów + VAT</li>
+              <li>Dokumenty rozliczane w biurze do 25 / mies.</li>
+              <li>Dopłata ponad limit: 4 PLN / dokument</li>
+            </ul>
+            <a class="btn btn-ghost" href="#kalkulator" style="margin-top:1rem;">Sprawdź wycenę</a>
+          </article>
+        </div>
+
+        <div class="pricing-group" data-pricing-group="kh">
+          <article class="price-card" aria-label="Pakiet KH MINI">
+            <p class="price-name">KH MINI (sp. z o.o.)</p>
+            <p class="price-value">599 PLN netto / mies.</p>
+            <ul class="list">
+              <li>Pełna księgowość</li>
+              <li>FV zakupowe do 25 / mies.</li>
+              <li>WB do 50 zapisów / mies.</li>
+            </ul>
+            <a class="btn btn-primary" href="#kalkulator" style="margin-top:1rem;">Sprawdź wycenę</a>
+          </article>
+          <article class="price-card" aria-label="Pakiet KH CORE">
+            <p class="price-name">KH CORE (sp. z o.o.)</p>
+            <p class="price-value">999 PLN netto / mies.</p>
+            <ul class="list">
+              <li>Pełna księgowość</li>
+              <li>FV zakupowe do 50 / mies.</li>
+              <li>WB do 100 zapisów / mies.</li>
+            </ul>
+            <a class="btn btn-ghost" href="#kontakt" style="margin-top:1rem;">Porozmawiaj z ekspertem</a>
+          </article>
+        </div>
+      </div>
+      <p class="price-note reveal">Domyślnie pokazujemy pakiety KPiR. Przełącz przyciskami, aby zobaczyć RYCZAŁT lub KSIĘGI HANDLOWE.</p>
+    </section>
+
+    <section id="kalkulator" class="container">
+      <h2 class="reveal">Kalkulator wyceny miesięcznej</h2>
+      <p class="section-intro reveal">Podaj wolumen i zakres. Dostajesz od razu orientacyjną cenę netto oraz rozbicie składników.</p>
+      <div class="calc-wrap">
+        <article class="calc-panel reveal">
+          <form id="calc-form" class="calc-grid" aria-label="Kalkulator wyceny">
+            <div class="calc-field calc-field-full">
+              <label for="calc-package">Pakiet</label>
+              <select id="calc-package" name="pakiet">
+                <option value="JDG_RYCZALT_BEZ_VAT">JDG RYCZAŁT BEZ VAT (149)</option>
+                <option value="JDG_RYCZALT_Z_VAT">JDG RYCZAŁT Z VAT (249)</option>
+                <option value="JDG_KPIR_BEZ_VAT">JDG KPiR BEZ VAT (249)</option>
+                <option value="JDG_KPIR_Z_VAT">JDG KPiR Z VAT (349)</option>
+                <option value="KH_MINI">KH MINI (599)</option>
+                <option value="KH_CORE">KH CORE (999)</option>
+              </select>
+            </div>
+
+            <div class="calc-field" data-group="jdg">
+              <label for="calc-docs">Dokumenty rozliczane w biurze / mies.</label>
+              <div class="calc-range-row">
+                <input id="calc-docs" name="dokumenty" type="range" min="0" max="400" step="1" value="25">
+                <input id="calc-docs-input" class="calc-number" type="number" min="0" max="400" step="1" value="25" inputmode="numeric" aria-label="Dokumenty rozliczane w biurze / mies.">
+              </div>
+            </div>
+
+            <div class="calc-field" data-group="kh">
+              <label for="calc-fv">FV zakupowe / mies.</label>
+              <div class="calc-range-row">
+                <input id="calc-fv" name="fv_zakupowe" type="range" min="0" max="400" step="1" value="25">
+                <input id="calc-fv-input" class="calc-number" type="number" min="0" max="400" step="1" value="25" inputmode="numeric" aria-label="FV zakupowe / mies.">
+              </div>
+            </div>
+
+            <div class="calc-field" data-group="kh">
+              <label for="calc-wb">Zapisy WB / mies.</label>
+              <div class="calc-range-row">
+                <input id="calc-wb" name="wb_zapisy" type="range" min="0" max="1000" step="1" value="50">
+                <input id="calc-wb-input" class="calc-number" type="number" min="0" max="1000" step="1" value="50" inputmode="numeric" aria-label="Zapisy WB / mies.">
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <label for="calc-employees">Liczba pracowników</label>
+              <div class="calc-range-row">
+                <input id="calc-employees" name="pracownicy" type="range" min="0" max="40" step="1" value="0">
+                <input id="calc-employees-input" class="calc-number" type="number" min="0" max="40" step="1" value="0" inputmode="numeric" aria-label="Liczba pracowników">
+              </div>
+            </div>
+
+            <div class="calc-field" data-group="fx">
+              <label for="calc-fx">Pozycje walutowe / mies.</label>
+              <div class="calc-range-row">
+                <input id="calc-fx" name="walutowe" type="range" min="0" max="300" step="1" value="0">
+                <input id="calc-fx-input" class="calc-number" type="number" min="0" max="300" step="1" value="0" inputmode="numeric" aria-label="Pozycje walutowe / mies.">
+              </div>
+            </div>
+
+            <div class="calc-field calc-field-full" data-group="cash-toggle">
+              <label for="calc-cash-enabled">Raport kasowy</label>
+              <select id="calc-cash-enabled" name="raport_kasowy">
+                <option value="0">Nie</option>
+                <option value="1">Tak</option>
+              </select>
+            </div>
+
+            <div class="calc-field" data-group="cash">
+              <label for="calc-cash-docs">Dokumenty kasowe / mies.</label>
+              <div class="calc-range-row">
+                <input id="calc-cash-docs" name="dokumenty_kasowe" type="range" min="0" max="300" step="1" value="0">
+                <input id="calc-cash-docs-input" class="calc-number" type="number" min="0" max="300" step="1" value="0" inputmode="numeric" aria-label="Dokumenty kasowe / mies.">
+              </div>
+            </div>
+          </form>
+          <p class="calc-hint">FV sprzedażowe wystawione samodzielnie są bez limitu i bez dopłaty.</p>
+        </article>
+
+        <aside class="calc-panel calc-result reveal" aria-live="polite">
+          <p style="margin:0;color:var(--text-muted);font-size:0.93rem;">Cena orientacyjna netto / mies.</p>
+          <p class="calc-total" id="calc-total">0 PLN</p>
+          <ul class="calc-breakdown">
+            <li><span>Cena bazowa pakietu</span><strong id="calc-base">0 PLN</strong></li>
+            <li><span>Dopłaty ponad limit</span><strong id="calc-over">0 PLN</strong></li>
+            <li><span>Kadry i place</span><strong id="calc-hr">0 PLN</strong></li>
+            <li><span>Raport kasowy</span><strong id="calc-cash">0 PLN</strong></li>
+            <li><span>Wyciągi walutowe</span><strong id="calc-fx-out">0 PLN</strong></li>
+          </ul>
+          <a class="btn btn-primary" href="#kontakt" id="calc-submit" style="margin-top:0.35rem;">Wyślij dokładną wycenę na maila</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="faq" class="container">
+      <h2 class="reveal">Najczęściej zadawane pytania</h2>
+      <div class="faq reveal" role="list">
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">Czy obsługujecie JDG i spółki z o.o.?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1"><p>Tak. Obsługujemy JDG (ryczałt, KPiR) oraz mikro spółki z o.o. (KH MINI i KH CORE).</p><p>Zakres i limity są jawne, więc od startu wiesz, czego dotyczy Twój pakiet.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">Jak dobrać pakiet: ryczałt, KPiR czy KH?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2"><p>Decyzja zależy od formy działalności i skali dokumentów.</p><p>Na starcie sprawdzamy: formę prawną, VAT, liczbę dokumentów kosztowych, liczbę zapisów WB i kadry.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">Co dokładnie zawiera pakiet, a czego nie zawiera?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3"><p>Pakiet obejmuje rozliczenia zgodnie z jego zakresem i limitami.</p><p>Pozycje dodatkowe (np. raport kasowy, walutowe, kadry i place) są rozliczane osobno i jawnie opisane przed startem.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">Czy dokumenty sprzedażowe wystawiane samodzielnie są bez limitu?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4"><p>Tak. Dokumenty sprzedażowe wystawiane samodzielnie przez klienta są bez limitu i bez dopłaty.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">Jak liczycie dokumenty ponad limit?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5"><p>Dla pakietów JDG: +4 PLN netto za każdy dokument ponad limit.</p><p>Dla KH MINI i KH CORE: +4 PLN netto za FV zakupową ponad limit. Dopłaty są naliczane miesięcznie na podstawie realnego wolumenu.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">Jak rozliczacie zapisy WB ponad limit w KH?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6"><p>W KH MINI i KH CORE dopłata wynosi +2 PLN netto za każdy zapis WB ponad limit pakietu.</p><p>Limit to odpowiednio 50 (KH MINI) i 100 (KH CORE).</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a7" id="faq-q7">Jak rozliczane są wyciągi walutowe i różnice kursowe?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a7" role="region" aria-labelledby="faq-q7"><p>To osobna pozycja poza pakietem: 4 PLN netto za pozycję walutową.</p><p>Nie jest to dopłata do zwykłego WB, tylko oddzielna usługa.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a8" id="faq-q8">Jak rozliczacie raport kasowy?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a8" role="region" aria-labelledby="faq-q8"><p>Raport kasowy jest poza pakietem: 100 PLN netto + 4 PLN netto za każdy dokument kasowy.</p><p>Pakiety KH MINI i KH CORE są bez obsługi kasy.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a9" id="faq-q9">Ile kosztuje obsługa pracowników?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a9" role="region" aria-labelledby="faq-q9"><p>Pozycja dodatkowa: 40 PLN netto / pracownik / miesiąc.</p><p>Zatrudnienie i zwolnienie: 50 PLN netto za zdarzenie.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a10" id="faq-q10">Jak wygląda przejęcie księgowości z innego biura?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a10" role="region" aria-labelledby="faq-q10"><p>Działamy w modelu „onboarding bez chaosu” - 8 kroków od umowy do pierwszego zamknięcia miesiąca.</p><p>Zaczynamy od checklisty i przejmujemy dane krok po kroku, z jedną osobą odpowiedzialną po stronie biura.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a11" id="faq-q11">Ile trwa start współpracy?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a11" role="region" aria-labelledby="faq-q11"><p>Standardowo od kilku dni do około 2 tygodni, zależnie od kompletności dokumentów i punktu startowego firmy.</p><p>Po wdrożeniu przechodzimy na regularny rytm miesięczny.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a12" id="faq-q12">Jakie dokumenty mam dostarczać i do kiedy?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a12" role="region" aria-labelledby="faq-q12"><p>Na wdrożeniu dostajesz checklistę i konkretne terminy miesięczne.</p><p>Model jest zdalny: KSeF, pliki, eksporty i uzupełnienia mailowo lub przez narzędzia online.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a13" id="faq-q13">Co jeśli dostarczę dokumenty po terminie?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a13" role="region" aria-labelledby="faq-q13"><p>Każde opóźnienie zwiększa ryzyko przesunięć i dodatkowej pracy po stronie rozliczeń.</p><p>Dlatego pilnujemy jasnych deadline'ów i szybciej sygnalizujemy braki, zanim zrobi się zator.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a14" id="faq-q14">Czy reprezentujecie klienta przed US i ZUS?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a14" role="region" aria-labelledby="faq-q14"><p>Tak, w zakresie pełnomocnictw i uzgodnionego modelu współpracy.</p><p>Zakres reprezentacji potwierdzamy przy onboardingu.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a15" id="faq-q15">Czy macie OC i kto odpowiada za błędy?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a15" role="region" aria-labelledby="faq-q15"><p>Pracujemy na formalnych zasadach odpowiedzialności i procesie kontroli dokumentów.</p><p>Szczegóły odpowiedzialności i zakres ochrony potwierdzamy w umowie przed startem.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a16" id="faq-q16">Jaki jest czas odpowiedzi?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a16" role="region" aria-labelledby="faq-q16"><p>SLA v1: potwierdzenie wiadomości tego samego dnia roboczego i odpowiedź merytoryczna do 24h w dni robocze.</p><p>W sprawach pilnych (termin US/ZUS do 48h) kontakt zwrotny jest tego samego dnia roboczego.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a17" id="faq-q17">Jak wygląda kontakt na co dzień?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a17" role="region" aria-labelledby="faq-q17"><p>Podstawa to kontakt zdalny: email + materiały online + uzgodnione punkty kontrolne.</p><p>Spotkania planujemy wtedy, gdy mają sens biznesowy i konkretny cel.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a18" id="faq-q18">Czy obsługujecie KSeF i integracje?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a18" role="region" aria-labelledby="faq-q18"><p>Proces jest przygotowany pod pracę na dokumentach elektronicznych i KSeF.</p><p>Zakres integracji z narzędziami zależy od Twojego systemu i ustalamy go przed startem.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a19" id="faq-q19">Jak wygląda zakończenie współpracy?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a19" role="region" aria-labelledby="faq-q19"><p>Proces wyjścia opieramy o uporządkowane przekazanie dokumentacji i stanu rozliczeń.</p><p>Dzięki temu nowe biuro może przejąć obsługę bez chaosu i luk informacyjnych.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a20" id="faq-q20">Czy obsługujecie firmy spoza Słupska i dla kogo to jest najlepsze?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a20" role="region" aria-labelledby="faq-q20"><p>Tak. Obsługujemy firmy lokalnie (Słupsk i okolice) oraz zdalnie.</p><p>To najlepszy model dla firm, które chcą jasnych zasad, limitów i przewidywalnej komunikacji miesięcznej.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a21" id="faq-q21">Czym jest raport właścicielski 1 strona?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a21" role="region" aria-labelledby="faq-q21"><p>To miesięczne podsumowanie najważniejszych liczb: przychód, koszty, wynik, podatki/ZUS, należności i zobowiązania.</p><p>Na końcu dostajesz 3 konkretne działania na kolejny miesiąc.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="kontakt" class="container">
+      <div class="cta-band reveal">
+        <h2>Gotowy uporządkować księgi i odzyskać spokój?</h2>
+        <p class="section-intro" style="margin-bottom:1rem;">Wypełnij formularz. Oddzwonimy lub odpiszemy z konkretną propozycją pakietu i zakresem.</p>
+        <div class="contact-layout">
+          <form id="lead-form" class="contact-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="website" aria-label="Formularz kontaktowy">
+            <input type="hidden" name="form-name" value="kontakt">
+            <input type="hidden" id="lead-estimate" name="cena_orientacyjna_netto">
+            <input type="hidden" id="lead-utm-source" name="utm_source">
+            <input type="hidden" id="lead-utm-medium" name="utm_medium">
+            <input type="hidden" id="lead-utm-campaign" name="utm_campaign">
+            <input type="hidden" id="lead-utm-content" name="utm_content">
+            <input type="hidden" id="lead-utm-term" name="utm_term">
+            <input type="hidden" id="lead-gclid" name="gclid">
+            <input type="hidden" id="lead-fbclid" name="fbclid">
+            <input type="hidden" id="lead-msclkid" name="msclkid">
+            <input type="hidden" id="lead-page-url" name="page_url">
+            <input type="hidden" id="lead-referrer" name="referrer">
+            <p hidden>
+              <label>Nie wypełniaj tego pola: <input name="website"></label>
+            </p>
+
+            <div class="contact-grid">
+              <div class="contact-field">
+                <label for="lead-name">Imię i nazwisko *</label>
+                <input id="lead-name" name="imie_nazwisko" type="text" autocomplete="name" required>
+              </div>
+
+              <div class="contact-field">
+                <label for="lead-company">Nazwa firmy *</label>
+                <input id="lead-company" name="firma" type="text" autocomplete="organization" required>
+              </div>
+
+              <div class="contact-field">
+                <label for="lead-email">Email *</label>
+                <input id="lead-email" name="email" type="email" autocomplete="email" required>
+              </div>
+
+              <div class="contact-field">
+                <label for="lead-phone">Telefon</label>
+                <input id="lead-phone" name="telefon" type="tel" autocomplete="tel">
+              </div>
+
+              <div class="contact-field">
+                <label for="lead-role">Twoja rola</label>
+                <select id="lead-role" name="rola">
+                  <option value="">Wybierz</option>
+                  <option value="wlasciciel">Właściciel / zarząd</option>
+                  <option value="manager">Manager operacyjny</option>
+                  <option value="administracja">Administracja / back office</option>
+                  <option value="inna">Inna</option>
+                </select>
+              </div>
+
+              <div class="contact-field">
+                <label for="lead-service">Jaka usługa Cię interesuje? *</label>
+                <select id="lead-service" name="usluga" required>
+                  <option value="">Wybierz pakiet lub usługę</option>
+                  <option value="JDG_RYCZALT_BEZ_VAT">JDG RYCZAŁT BEZ VAT</option>
+                  <option value="JDG_RYCZALT_Z_VAT">JDG RYCZAŁT Z VAT</option>
+                  <option value="JDG_KPIR_BEZ_VAT">JDG KPiR BEZ VAT</option>
+                  <option value="JDG_KPIR_Z_VAT">JDG KPiR Z VAT</option>
+                  <option value="KH_MINI">KH MINI</option>
+                  <option value="KH_CORE">KH CORE</option>
+                  <option value="KADRY_PLACE">Kadry i place</option>
+                  <option value="NIE_WIEM">Nie wiem, potrzebuję konsultacji</option>
+                </select>
+              </div>
+
+              <div class="contact-field">
+                <label for="lead-scale">Skala miesięczna (orientacyjnie)</label>
+                <select id="lead-scale" name="skala_miesieczna">
+                  <option value="">Wybierz</option>
+                  <option value="do_25">Do 25 dokumentów</option>
+                  <option value="26_100">26-100 dokumentów</option>
+                  <option value="101_250">101-250 dokumentów</option>
+                  <option value="251_500">251-500 dokumentów</option>
+                  <option value="powyzej_500">Powyżej 500 dokumentów</option>
+                </select>
+              </div>
+
+              <div class="contact-field">
+                <label for="lead-contact-mode">Preferowany kontakt</label>
+                <select id="lead-contact-mode" name="preferowany_kontakt">
+                  <option value="">Wybierz</option>
+                  <option value="telefon">Telefon</option>
+                  <option value="email">Email</option>
+                  <option value="dowolnie">Dowolnie</option>
+                </select>
+              </div>
+
+              <div class="contact-field contact-field-full">
+                <label for="lead-message">Co jest teraz największym problemem?</label>
+                <textarea id="lead-message" name="wiadomosc" placeholder="Np. dużo dokumentów, słaba komunikacja z obecnym biurem, brak jasności kosztów."></textarea>
+              </div>
+
+              <div class="contact-field contact-field-full">
+                <label class="contact-consent" for="lead-consent">
+                  <input id="lead-consent" name="zgoda_kontakt" type="checkbox" required>
+                  <span>Wyrażam zgodę na kontakt w sprawie zapytania i przygotowania oferty. *</span>
+                </label>
+              </div>
+
+              <div class="contact-actions contact-field-full">
+                <button class="btn btn-primary" type="submit">Wyślij zapytanie</button>
+                <a class="btn btn-ghost" href="mailto:biuro@po-pierwsze-zysk.pl">Napisz e-mail</a>
+              </div>
+            </div>
+          </form>
+
+          <aside class="contact-side" aria-label="Co dalej po formularzu">
+            <strong>Co dalej po wysłaniu formularza?</strong>
+            <ul>
+              <li>Kontakt zwrotny: do 24h w dni robocze.</li>
+              <li>Krótka rozmowa o wolumenie i modelu współpracy.</li>
+              <li>Wstępna rekomendacja pakietu + wycena.</li>
+            </ul>
+            <p>Pełna nazwa: Po-Pierwsze-Zysk.pl Sp. z o. o.</p>
+            <p>Adres: ul. Maurycego Mochnackiego 18/36, 76-200 Słupsk</p>
+            <p>NIP: 8393194151</p>
+            <p>Telefon: <a href="tel:+48513013580">513013580</a></p>
+            <p>Email: <a href="mailto:biuro@po-pierwsze-zysk.pl">biuro@po-pierwsze-zysk.pl</a></p>
+            <p>Obsługujemy lokalnie i zdalnie (cały kraj).</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="./polityka-prywatnosci.html">Polityka prywatności</a>
+        <a href="mailto:biuro@po-pierwsze-zysk.pl">Kontakt</a>
+      </div>
+      <small>Po-Pierwsze-Zysk.pl Sp. z o. o. | NIP: 8393194151 | ul. Maurycego Mochnackiego 18/36, 76-200 Słupsk</small>
+      <small>Copyright <span id="year"></span> Po pierwsze: zysk. Wszelkie prawa zastrzeżone.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    const faqButtons = document.querySelectorAll('.faq-q');
+    faqButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!expanded));
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        if (!panel) return;
+        if (expanded) {
+          panel.style.maxHeight = '0px';
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+
+    const pricingTabs = document.querySelectorAll('[data-pricing-tab]');
+    const pricingGroups = document.querySelectorAll('[data-pricing-group]');
+    const setPricingGroup = (group) => {
+      pricingTabs.forEach((tab) => {
+        tab.setAttribute('aria-pressed', String(tab.dataset.pricingTab === group));
+      });
+      pricingGroups.forEach((panel) => {
+        panel.classList.toggle('is-active', panel.dataset.pricingGroup === group);
+      });
+    };
+
+    pricingTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        setPricingGroup(tab.dataset.pricingTab);
+      });
+    });
+
+    setPricingGroup('kpir');
+
+    const calcConfig = {
+      JDG_RYCZALT_BEZ_VAT: { base: 149, group: 'jdg', fxAllowed: false, cashAllowed: false },
+      JDG_RYCZALT_Z_VAT: { base: 249, group: 'jdg', fxAllowed: false, cashAllowed: false },
+      JDG_KPIR_BEZ_VAT: { base: 249, group: 'jdg', fxAllowed: true, cashAllowed: false },
+      JDG_KPIR_Z_VAT: { base: 349, group: 'jdg', fxAllowed: true, cashAllowed: false },
+      KH_MINI: { base: 599, group: 'kh', fvLimit: 25, wbLimit: 50, fxAllowed: true, cashAllowed: true },
+      KH_CORE: { base: 999, group: 'kh', fvLimit: 50, wbLimit: 100, fxAllowed: true, cashAllowed: true }
+    };
+
+    const calcEls = {
+      form: document.getElementById('calc-form'),
+      pkg: document.getElementById('calc-package'),
+      docs: document.getElementById('calc-docs'),
+      docsInput: document.getElementById('calc-docs-input'),
+      fv: document.getElementById('calc-fv'),
+      fvInput: document.getElementById('calc-fv-input'),
+      wb: document.getElementById('calc-wb'),
+      wbInput: document.getElementById('calc-wb-input'),
+      employees: document.getElementById('calc-employees'),
+      employeesInput: document.getElementById('calc-employees-input'),
+      fx: document.getElementById('calc-fx'),
+      fxInput: document.getElementById('calc-fx-input'),
+      cashEnabled: document.getElementById('calc-cash-enabled'),
+      cashDocs: document.getElementById('calc-cash-docs'),
+      cashDocsInput: document.getElementById('calc-cash-docs-input'),
+      docsVal: document.getElementById('calc-docs-val'),
+      fvVal: document.getElementById('calc-fv-val'),
+      wbVal: document.getElementById('calc-wb-val'),
+      employeesVal: document.getElementById('calc-employees-val'),
+      fxVal: document.getElementById('calc-fx-val'),
+      cashDocsVal: document.getElementById('calc-cash-docs-val'),
+      total: document.getElementById('calc-total'),
+      base: document.getElementById('calc-base'),
+      over: document.getElementById('calc-over'),
+      hr: document.getElementById('calc-hr'),
+      cash: document.getElementById('calc-cash'),
+      fxOut: document.getElementById('calc-fx-out'),
+      submit: document.getElementById('calc-submit')
+    };
+
+    const leadEls = {
+      form: document.getElementById('lead-form'),
+      service: document.getElementById('lead-service'),
+      estimate: document.getElementById('lead-estimate'),
+      utmSource: document.getElementById('lead-utm-source'),
+      utmMedium: document.getElementById('lead-utm-medium'),
+      utmCampaign: document.getElementById('lead-utm-campaign'),
+      utmContent: document.getElementById('lead-utm-content'),
+      utmTerm: document.getElementById('lead-utm-term'),
+      gclid: document.getElementById('lead-gclid'),
+      fbclid: document.getElementById('lead-fbclid'),
+      msclkid: document.getElementById('lead-msclkid'),
+      pageUrl: document.getElementById('lead-page-url'),
+      referrer: document.getElementById('lead-referrer')
+    };
+
+    const fmtPln = (v) => `${Math.round(v).toLocaleString('pl-PL')} PLN`;
+    const readInt = (el) => {
+      const parsed = Number.parseInt(el.value, 10);
+      return Number.isFinite(parsed) && parsed > 0 ? parsed : 0;
+    };
+    const normalizeToRange = (rangeEl, raw) => {
+      const parsed = Number.parseInt(String(raw), 10);
+      let value = Number.isFinite(parsed) ? parsed : readInt(rangeEl);
+      const min = Number.parseInt(rangeEl.min || '0', 10);
+      const max = Number.parseInt(rangeEl.max || '999999', 10);
+      if (Number.isFinite(min)) value = Math.max(min, value);
+      if (Number.isFinite(max)) value = Math.min(max, value);
+      return value;
+    };
+
+    const trackEvent = (name, payload = {}) => {
+      if (Array.isArray(window.dataLayer)) {
+        window.dataLayer.push({ event: name, ...payload });
+      }
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', name, payload);
+      }
+      if (typeof window.fbq === 'function') {
+        if (name === 'generate_lead' || name === 'kontakt_submit') {
+          window.fbq('track', 'Lead', payload);
+        } else {
+          window.fbq('trackCustom', name, payload);
+        }
+      }
+    };
+
+    let calcStarted = false;
+    let lastTrackedTotal = null;
+
+    const syncLeadFromCalculator = () => {
+      const selectedPkg = calcEls.pkg ? calcEls.pkg.value : '';
+      if (leadEls.service && selectedPkg) {
+        const matchingOption = leadEls.service.querySelector(`option[value="${selectedPkg}"]`);
+        if (matchingOption) {
+          leadEls.service.value = selectedPkg;
+        }
+      }
+      if (leadEls.estimate) {
+        leadEls.estimate.value = lastTrackedTotal ? String(lastTrackedTotal) : '';
+      }
+    };
+
+    const readStoredAttribution = () => {
+      const key = (window.PIERWSZE_ZYSK_SITE && window.PIERWSZE_ZYSK_SITE.attributionStorageKey) || 'ppz_attribution_v1';
+      try {
+        const raw = window.localStorage.getItem(key);
+        if (!raw) return {};
+        const parsed = JSON.parse(raw);
+        return parsed && typeof parsed === 'object' ? parsed : {};
+      } catch (e) {
+        return {};
+      }
+    };
+
+    const fillLeadSourceFields = () => {
+      const params = new URLSearchParams(window.location.search || '');
+      const stored = readStoredAttribution();
+      const read = (k) => params.get(k) || stored[k] || '';
+      if (leadEls.utmSource) leadEls.utmSource.value = read('utm_source');
+      if (leadEls.utmMedium) leadEls.utmMedium.value = read('utm_medium');
+      if (leadEls.utmCampaign) leadEls.utmCampaign.value = read('utm_campaign');
+      if (leadEls.utmContent) leadEls.utmContent.value = read('utm_content');
+      if (leadEls.utmTerm) leadEls.utmTerm.value = read('utm_term');
+      if (leadEls.gclid) leadEls.gclid.value = read('gclid');
+      if (leadEls.fbclid) leadEls.fbclid.value = read('fbclid');
+      if (leadEls.msclkid) leadEls.msclkid.value = read('msclkid');
+      if (leadEls.pageUrl) leadEls.pageUrl.value = window.location.href || stored.last_page || '';
+      if (leadEls.referrer) leadEls.referrer.value = document.referrer || stored.referrer || '';
+    };
+
+    const syncSliderValues = () => {
+      const docs = readInt(calcEls.docs);
+      const fv = readInt(calcEls.fv);
+      const wb = readInt(calcEls.wb);
+      const employees = readInt(calcEls.employees);
+      const fx = readInt(calcEls.fx);
+      const cashDocs = readInt(calcEls.cashDocs);
+
+      if (calcEls.docsVal) calcEls.docsVal.textContent = docs.toLocaleString('pl-PL');
+      if (calcEls.fvVal) calcEls.fvVal.textContent = fv.toLocaleString('pl-PL');
+      if (calcEls.wbVal) calcEls.wbVal.textContent = wb.toLocaleString('pl-PL');
+      if (calcEls.employeesVal) calcEls.employeesVal.textContent = employees.toLocaleString('pl-PL');
+      if (calcEls.fxVal) calcEls.fxVal.textContent = fx.toLocaleString('pl-PL');
+      if (calcEls.cashDocsVal) calcEls.cashDocsVal.textContent = cashDocs.toLocaleString('pl-PL');
+
+      if (calcEls.docsInput) calcEls.docsInput.value = String(docs);
+      if (calcEls.fvInput) calcEls.fvInput.value = String(fv);
+      if (calcEls.wbInput) calcEls.wbInput.value = String(wb);
+      if (calcEls.employeesInput) calcEls.employeesInput.value = String(employees);
+      if (calcEls.fxInput) calcEls.fxInput.value = String(fx);
+      if (calcEls.cashDocsInput) calcEls.cashDocsInput.value = String(cashDocs);
+    };
+
+    const updateCalcVisibility = () => {
+      const selected = calcConfig[calcEls.pkg.value];
+      const isKh = selected.group === 'kh';
+      document.querySelectorAll('[data-group="jdg"]').forEach((el) => {
+        el.style.display = isKh ? 'none' : '';
+      });
+      document.querySelectorAll('[data-group="kh"]').forEach((el) => {
+        el.style.display = isKh ? '' : 'none';
+      });
+
+      document.querySelectorAll('[data-group="fx"]').forEach((el) => {
+        el.style.display = selected.fxAllowed ? '' : 'none';
+      });
+      if (!selected.fxAllowed) {
+        calcEls.fx.value = '0';
+      }
+
+      document.querySelectorAll('[data-group="cash-toggle"]').forEach((el) => {
+        el.style.display = selected.cashAllowed ? '' : 'none';
+      });
+      if (!selected.cashAllowed) {
+        calcEls.cashEnabled.value = '0';
+        calcEls.cashDocs.value = '0';
+      }
+
+      const cashOn = selected.cashAllowed && calcEls.cashEnabled.value === '1';
+      document.querySelectorAll('[data-group="cash"]').forEach((el) => {
+        el.style.display = cashOn ? '' : 'none';
+      });
+
+      syncSliderValues();
+    };
+
+    const calculatePrice = () => {
+      const selected = calcConfig[calcEls.pkg.value];
+      const base = selected.base;
+
+      let overLimit = 0;
+      if (selected.group === 'jdg') {
+        const docs = readInt(calcEls.docs);
+        overLimit = Math.max(0, docs - 25) * 4;
+      } else {
+        const fv = readInt(calcEls.fv);
+        const wb = readInt(calcEls.wb);
+        overLimit =
+          Math.max(0, fv - selected.fvLimit) * 4 +
+          Math.max(0, wb - selected.wbLimit) * 2;
+      }
+
+      const hr = readInt(calcEls.employees) * 40;
+      const fx = selected.fxAllowed ? readInt(calcEls.fx) * 4 : 0;
+      const cash = selected.cashAllowed && calcEls.cashEnabled.value === '1' ? (100 + readInt(calcEls.cashDocs) * 4) : 0;
+      const total = base + overLimit + hr + cash + fx;
+
+      calcEls.base.textContent = fmtPln(base);
+      calcEls.over.textContent = fmtPln(overLimit);
+      calcEls.hr.textContent = fmtPln(hr);
+      calcEls.cash.textContent = fmtPln(cash);
+      calcEls.fxOut.textContent = fmtPln(fx);
+      calcEls.total.textContent = fmtPln(total);
+
+      if (lastTrackedTotal !== total) {
+        lastTrackedTotal = total;
+        trackEvent('kalkulator_wynik', {
+          pakiet: calcEls.pkg.value,
+          cena: total,
+          doplata_ponad_limit: overLimit,
+          doplata_kadry: hr,
+          doplata_kasa: cash,
+          doplata_walutowe: fx
+        });
+      }
+    };
+
+    const onCalcInteraction = () => {
+      if (calcStarted) return;
+      calcStarted = true;
+      trackEvent('kalkulator_start');
+    };
+
+    if (calcEls.form) {
+      const bindManualInput = (rangeEl, inputEl) => {
+        if (!rangeEl || !inputEl) return;
+        inputEl.addEventListener('input', () => {
+          onCalcInteraction();
+          rangeEl.value = String(normalizeToRange(rangeEl, inputEl.value));
+          syncSliderValues();
+          updateCalcVisibility();
+          calculatePrice();
+        });
+        inputEl.addEventListener('blur', () => {
+          rangeEl.value = String(normalizeToRange(rangeEl, inputEl.value));
+          syncSliderValues();
+          updateCalcVisibility();
+          calculatePrice();
+        });
+      };
+
+      bindManualInput(calcEls.docs, calcEls.docsInput);
+      bindManualInput(calcEls.fv, calcEls.fvInput);
+      bindManualInput(calcEls.wb, calcEls.wbInput);
+      bindManualInput(calcEls.employees, calcEls.employeesInput);
+      bindManualInput(calcEls.fx, calcEls.fxInput);
+      bindManualInput(calcEls.cashDocs, calcEls.cashDocsInput);
+
+      calcEls.form.querySelectorAll('input[type="range"], select').forEach((el) => {
+        el.addEventListener('input', () => {
+          onCalcInteraction();
+          syncSliderValues();
+          updateCalcVisibility();
+          calculatePrice();
+        });
+        el.addEventListener('change', () => {
+          onCalcInteraction();
+          syncSliderValues();
+          updateCalcVisibility();
+          calculatePrice();
+        });
+      });
+
+      syncSliderValues();
+      updateCalcVisibility();
+      calculatePrice();
+    }
+
+    if (calcEls.submit) {
+      calcEls.submit.addEventListener('click', () => {
+        syncLeadFromCalculator();
+        trackEvent('kalkulator_submit', {
+          pakiet: calcEls.pkg.value,
+          cena: lastTrackedTotal || 0
+        });
+      });
+    }
+
+    if (leadEls.form) {
+      fillLeadSourceFields();
+      leadEls.form.addEventListener('submit', () => {
+        if (leadEls.estimate && !leadEls.estimate.value && lastTrackedTotal) {
+          leadEls.estimate.value = String(lastTrackedTotal);
+        }
+        trackEvent('generate_lead', {
+          currency: 'PLN',
+          value: lastTrackedTotal || 0,
+          pakiet: leadEls.service ? leadEls.service.value : ''
+        });
+        trackEvent('kontakt_submit', {
+          usluga: leadEls.service ? leadEls.service.value : '',
+          cena_orientacyjna: leadEls.estimate ? leadEls.estimate.value : ''
+        });
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Po pierwsze: zysk - ksiegowosc dla JDG i spolek z o.o.</title>
+  <meta name="description" content="Ksiegowosc dla JDG i mikro spolek z o.o. Jasne pakiety, czytelne limity i szybki start bez chaosu.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b5fff'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial' font-size='24' fill='white'%3EPZ%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --surface-soft: #f6f8fc;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #dbe3f0;
+      --primary: #0b5fff;
+      --primary-strong: #0846c5;
+      --accent: #00a87e;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 16px;
+      --maxw: 1140px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 500px at 20% -10%, rgba(11,95,255,0.12), transparent 60%),
+        radial-gradient(1000px 450px at 85% -20%, rgba(0,168,126,0.10), transparent 60%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(var(--maxw), 92vw);
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(219,227,240,0.85);
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.03rem;
+      letter-spacing: 0.01em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.94rem;
+      transition: color 180ms ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      padding: 0.8rem 1.25rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(11, 95, 255, 0.24);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #2d7bff);
+      color: #fff;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible { background: linear-gradient(135deg, var(--primary-strong), var(--primary)); }
+
+    .btn-ghost {
+      border-color: var(--border);
+      background: rgba(255,255,255,0.9);
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 5.5rem 0 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 1.07;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      margin: 1rem 0 0;
+      color: var(--text-muted);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      max-width: 66ch;
+    }
+
+    .hero-cta {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      margin-top: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: 1rem 1.1rem;
+    }
+
+    .hero-note ul {
+      margin: 0.5rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    section {
+      padding: 3.7rem 0;
+    }
+
+    h2 {
+      margin: 0 0 0.9rem;
+      font-size: clamp(1.6rem, 2.8vw, 2.35rem);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+    }
+
+    .section-intro {
+      margin: 0 0 1.6rem;
+      color: var(--text-muted);
+      max-width: 70ch;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1rem;
+      box-shadow: var(--shadow);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .card:hover,
+    .card:focus-within {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--text-muted);
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    .list li + li { margin-top: 0.45rem; }
+
+    .split {
+      display: grid;
+      gap: 1.1rem;
+      grid-template-columns: 1fr;
+    }
+
+    .pricing {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    .price-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, #ffffff, #f9fbff);
+      box-shadow: var(--shadow);
+      padding: 1.2rem;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px rgba(11, 95, 255, 0.18);
+    }
+
+    .price-name {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .price-value {
+      margin: 0.25rem 0 0.7rem;
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+
+    .price-note {
+      margin-top: 1rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .faq {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .faq-item + .faq-item { border-top: 1px solid var(--border); }
+
+    .faq-q {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      text-align: left;
+      padding: 1rem 1rem;
+      font: inherit;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+    }
+
+    .faq-q:hover { background: var(--surface-soft); }
+
+    .faq-q .chevron {
+      transition: transform 220ms ease;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .faq-q[aria-expanded="true"] .chevron { transform: rotate(180deg); }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 240ms ease;
+    }
+
+    .faq-a p {
+      margin: 0;
+      padding: 0 1rem 1rem;
+      color: var(--text-muted);
+    }
+
+    .cta-band {
+      border: 1px solid rgba(11, 95, 255, 0.25);
+      border-radius: calc(var(--radius) + 2px);
+      background: linear-gradient(140deg, #f2f6ff, #e7fff8);
+      padding: 1.4rem;
+    }
+
+    .cta-band h2 { margin-bottom: 0.6rem; }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 1.3rem 0 2.2rem;
+      color: var(--text-muted);
+      font-size: 0.93rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .footer a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .footer a:hover,
+    .footer a:focus-visible { text-decoration: underline; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 420ms ease, transform 420ms ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 760px) {
+      .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .split { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .pricing { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-grid { grid-template-columns: 1.2fr 0.8fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal, .card, .btn, .price-card, .faq-a, .faq-q .chevron {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" aria-label="Naglowek strony">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top">Po pierwsze: zysk</a>
+      <nav class="nav" aria-label="Nawigacja glowna">
+        <a href="#problem">Problem</a>
+        <a href="#rozwiazanie">Rozwiazanie</a>
+        <a href="#cennik">Cennik</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-primary" href="#kontakt">Sprawdz wycene</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <h1>Ksiegi pod kontrola. Wynik firmy jasny co miesiac.</h1>
+          <p class="lead">Ksiegi dla mikro spolek z o.o. i JDG ze Slupska i okolic: jasne pakiety, czytelne limity, szybki start bez chaosu.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#kontakt">Sprawdz wycene w 2 minuty</a>
+            <a class="btn btn-ghost" href="#rozwiazanie">Porozmawiaj z ekspertem</a>
+          </div>
+        </div>
+        <aside class="hero-note reveal" aria-label="Dlaczego teraz">
+          <strong>Dlaczego teraz</strong>
+          <ul>
+            <li>Obowiazkow podatkowo-raportowych jest wiecej, a margines na blad jest mniejszy.</li>
+            <li>Brak porzadku w dokumentach kosztuje czas i pieniadze wlasciciela.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="problem" class="container">
+      <h2 class="reveal">Czy to brzmi znajomo?</h2>
+      <p class="section-intro reveal">Nie masz jasnej odpowiedzi: "ile realnie zostaje na koniec miesiaca". Dokumenty i terminy wracaja jak pozar co tydzien, a Ty dopinasz wszystko sam.</p>
+      <div class="cards">
+        <article class="card reveal"><p>Brak jasnosci finansowej i nieczytelny obraz kosztow.</p></article>
+        <article class="card reveal"><p>Chaos dokumentowy i terminowy (US/ZUS/VAT/CIT).</p></article>
+        <article class="card reveal"><p>Slaba komunikacja i brak czytelnych zasad wspolpracy.</p></article>
+      </div>
+      <div class="card reveal" style="margin-top:1rem;">
+        <strong>Koszt tego problemu</strong>
+        <ul class="list" style="margin-top:0.6rem;">
+          <li>Stracone godziny wlasciciela co tydzien na administracje i poprawki.</li>
+          <li>Ryzyko kosztow bledow, opoznien i nieprzewidzianych doplat.</li>
+          <li>Wolniejsze decyzje biznesowe, bo liczby sa nieczytelne lub za pozno.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="rozwiazanie" class="container">
+      <h2 class="reveal">Przedstawiamy: Po pierwsze: zysk</h2>
+      <p class="section-intro reveal">Abonamentowa obsluga ksiegowa z jasnymi limitami i doplatami: wiesz za co placisz i co miesiac masz porzadek.</p>
+      <div class="split">
+        <article class="card reveal">
+          <strong>Jak to dziala</strong>
+          <ol class="list" style="margin-top:0.6rem;">
+            <li>Wybierasz pakiet (JDG lub KH) dopasowany do skali dokumentow.</li>
+            <li>Przechodzimy wdrozenie krok po kroku i ustawiamy prosty proces miesieczny.</li>
+            <li>Co miesiac rozliczamy firme zgodnie z ustalonym zakresem i limitami.</li>
+          </ol>
+        </article>
+        <article class="card reveal">
+          <strong>Co zyskujesz</strong>
+          <ul class="list" style="margin-top:0.6rem;">
+            <li>Jasnosc kosztow obslugi i zasad wspolpracy.</li>
+            <li>Mniej czasu wlasciciela na administracje.</li>
+            <li>Stabilnosc i przewidywalnosc w terminach.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="stack" class="container">
+      <h2 class="reveal">Co zawiera wspolpraca</h2>
+      <div class="split">
+        <article class="card reveal">
+          <strong>Glowny zakres</strong>
+          <ul class="list" style="margin-top:0.6rem;">
+            <li>Prowadzenie ksiegowosci zgodnie z wybranym pakietem (JDG lub KH).</li>
+            <li>Jasny zakres, limity i cennik doplat ponad limit.</li>
+            <li>Rozliczenia VAT/JPK/CIT/PIT/ZUS zgodnie z wybranym pakietem.</li>
+          </ul>
+        </article>
+        <article class="card reveal">
+          <strong>Dodatki i zasady</strong>
+          <ul class="list" style="margin-top:0.6rem;">
+            <li>Dokumenty/FV sprzedazowe wystawione samodzielnie: bez limitu i bez doplaty.</li>
+            <li>Kadry i place: 40 PLN netto / pracownik / mies.</li>
+            <li>Raport kasowy i walutowe rozliczane jako pozycje osobne.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="cennik" class="container">
+      <h2 class="reveal">Inwestycja</h2>
+      <p class="section-intro reveal">Pakiety dla spolek z o.o. i JDG. Cennik i limity sa jawne, a doplaty dzialaja tylko po przekroczeniu zakresu.</p>
+      <div class="pricing">
+        <article class="price-card reveal" aria-label="Pakiet KH MINI">
+          <p class="price-name">KH MINI (sp. z o.o.)</p>
+          <p class="price-value">599 PLN netto / mies.</p>
+          <ul class="list">
+            <li>Pelna ksiegowosc</li>
+            <li>FV zakupowe do 25 / mies.</li>
+            <li>WB do 50 zapisow / mies.</li>
+          </ul>
+          <a class="btn btn-primary" href="#kontakt" style="margin-top:1rem;">Sprawdz wycene</a>
+        </article>
+        <article class="price-card reveal" aria-label="Pakiet KH CORE">
+          <p class="price-name">KH CORE (sp. z o.o.)</p>
+          <p class="price-value">999 PLN netto / mies.</p>
+          <ul class="list">
+            <li>Pelna ksiegowosc</li>
+            <li>FV zakupowe do 50 / mies.</li>
+            <li>WB do 100 zapisow / mies.</li>
+          </ul>
+          <a class="btn btn-ghost" href="#kontakt" style="margin-top:1rem;">Porozmawiaj z ekspertem</a>
+        </article>
+      </div>
+      <p class="price-note reveal">Dostepne tez pakiety JDG: 149 / 199 / 249 / 299 PLN netto / mies. (zaleznie od wariantu).</p>
+    </section>
+
+    <section id="faq" class="container">
+      <h2 class="reveal">Najczesciej zadawane pytania</h2>
+      <div class="faq reveal" role="list">
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">Ile to trwa?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1"><p>To model miesieczny. Start po przekazaniu dokumentow i wdrozeniu procesu.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">Czy to zadziala w mojej firmie?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2"><p>Tak, jesli chcesz pracowac na jasnych limitach i regularnym procesie, a nie ad hoc.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">Co z dokumentami sprzedazowymi?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3"><p>Dokumenty/FV sprzedazowe wystawione samodzielnie sa bez limitu i bez doplaty.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">Czy obslugujecie kadry i place?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4"><p>Tak, jako pozycja dodatkowa: 40 PLN netto / pracownik / mies.</p></div>
+        </article>
+        <article class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">Co jesli przekroczymy limity?<span class="chevron">+</span></button>
+          <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5"><p>Dzialaja jawne doplaty ponad limit zgodnie z cennikiem.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="card reveal">
+        <h2 style="margin-top:0;">Gwarancja transparentnego procesu</h2>
+        <p class="section-intro" style="margin-bottom:0.5rem;">Na etapie testu nie skladamy obietnic marketingowych typu "X% wzrostu". Gwarantujemy czytelny zakres wspolpracy: pakiety, limity i doplaty sa jawne przed startem.</p>
+        <ul class="list">
+          <li>Zakres i limity uzgadniane przed wdrozeniem.</li>
+          <li>Pozycje poza pakietem rozliczane osobno i jasno opisane.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="kontakt" class="container">
+      <div class="cta-band reveal">
+        <h2>Gotowy uporzadkowac ksiegi i odzyskac spokoj?</h2>
+        <p class="section-intro" style="margin-bottom:1rem;">Zacznij od szybkiej wyceny i jasnych zasad wspolpracy.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#">Sprawdz wycene w 2 minuty</a>
+          <a class="btn btn-ghost" href="mailto:[do_uzupelnienia]">Napisz email</a>
+        </div>
+        <p style="margin-top:1rem;color:var(--text-muted);">Telefon: [do uzupelnienia] | Email: [do uzupelnienia] | Strona: po-pierwsze-zysk.pl</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="#">Polityka prywatnosci</a>
+        <a href="mailto:[do_uzupelnienia]">Kontakt</a>
+      </div>
+      <small>Copyright <span id="year"></span> Po pierwsze: zysk. Wszelkie prawa zastrzezone.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    const faqButtons = document.querySelectorAll('.faq-q');
+    faqButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!expanded));
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        if (!panel) return;
+        if (expanded) {
+          panel.style.maxHeight = '0px';
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

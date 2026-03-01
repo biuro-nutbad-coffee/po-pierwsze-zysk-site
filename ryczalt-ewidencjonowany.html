@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ryczałt ewidencjonowany | Po pierwsze: zysk</title>
+  <meta name="description" content="Ryczałt ewidencjonowany: kiedy się opłaca, czym różni się od KPiR i jak policzyć orientacyjny koszt obsługi miesięcznej.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://po-pierwsze-zysk.pl/ryczalt-ewidencjonowany.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:title" content="Ryczałt ewidencjonowany | Po pierwsze: zysk">
+  <meta property="og:description" content="Ryczałt ewidencjonowany: kiedy się opłaca, czym różni się od KPiR i jak policzyć orientacyjny koszt obsługi miesięcznej.">
+  <meta property="og:url" content="https://po-pierwsze-zysk.pl/ryczalt-ewidencjonowany.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f2a23'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial' font-size='24' fill='%23d8efe7'%3EPZ%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    window.PIERWSZE_ZYSK_SITE = window.PIERWSZE_ZYSK_SITE || {};
+    window.PIERWSZE_ZYSK_SITE.gaMeasurementId = "G-PWDPCYBSS1";
+    window.PIERWSZE_ZYSK_SITE.metaPixelId = "1621726141874033";
+    window.PIERWSZE_ZYSK_SITE.cookieConsentStorageKey = "ppz_cookie_consent_v1";
+    window.PIERWSZE_ZYSK_SITE.cookieConsentVersion = "2026-02-25";
+    window.PIERWSZE_ZYSK_SITE.attributionStorageKey = "ppz_attribution_v1";
+  </script>
+  <script src="./assets/ppz-consent.js"></script>
+  <style>
+    :root {
+      --bg: #0f1e1a;
+      --surface: #142a24;
+      --surface-soft: #1b3630;
+      --text: #eaf4f0;
+      --text-muted: #b8d0c8;
+      --border: #2f4f46;
+      --primary: #2f8f72;
+      --primary-strong: #226a55;
+      --shadow: 0 14px 34px rgba(0, 0, 0, 0.3);
+      --radius: 16px;
+      --maxw: 1140px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 520px at 20% -8%, rgba(47,143,114,0.22), transparent 62%),
+        radial-gradient(1000px 450px at 88% -12%, rgba(110,183,160,0.14), transparent 62%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    .container { width: min(var(--maxw), 92vw); margin-inline: auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(219,227,240,0.85);
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.03rem;
+      letter-spacing: 0.01em;
+      font-family: "Bricolage Grotesque", Inter, sans-serif;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.94rem;
+      transition: color 180ms ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      padding: 0.8rem 1.25rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(47, 143, 114, 0.35);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #3ea687);
+      color: #fff;
+    }
+
+    .btn-ghost {
+      border-color: var(--border);
+      background: rgba(255,255,255,0.9);
+      color: var(--text);
+    }
+
+    section { padding: 3.5rem 0; }
+
+    h1 {
+      margin: 0;
+      font-family: "Bricolage Grotesque", Inter, sans-serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      margin: 0 0 0.85rem;
+      font-size: clamp(1.45rem, 2.5vw, 2.2rem);
+      line-height: 1.15;
+      letter-spacing: -0.012em;
+    }
+
+    .lead {
+      margin: 1rem 0 0;
+      color: var(--text-muted);
+      font-size: clamp(1rem, 1.9vw, 1.14rem);
+      max-width: 74ch;
+    }
+
+    .hero {
+      padding: 5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+
+    .hero-note,
+    .card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: 1rem;
+    }
+
+    .hero-note p,
+    .card p,
+    .small-note {
+      margin: 0;
+      color: var(--text-muted);
+    }
+
+    .hero-cta {
+      margin-top: 1.3rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .small-note {
+      font-size: 0.9rem;
+      margin-top: 0.8rem;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    .list li + li { margin-top: 0.42rem; }
+
+    .split {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    .compare-wrap {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: auto;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px;
+    }
+
+    th, td {
+      padding: 0.75rem 0.8rem;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+      font-size: 0.95rem;
+    }
+
+    thead th {
+      background: var(--surface-soft);
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    tbody td { color: var(--text-muted); }
+
+    .limit-band {
+      border: 1px solid rgba(110, 183, 160, 0.45);
+      border-radius: var(--radius);
+      background: linear-gradient(140deg, rgba(47,143,114,0.2), rgba(110,183,160,0.12));
+      padding: 1rem;
+    }
+
+    .stats {
+      display: grid;
+      gap: 0.8rem;
+      grid-template-columns: 1fr;
+      margin-top: 0.8rem;
+    }
+
+    .stat {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(15, 30, 26, 0.4);
+      padding: 0.8rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .pricing {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    .price-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, #18362e, #142a24);
+      box-shadow: var(--shadow);
+      padding: 1.1rem;
+    }
+
+    .price-name { margin: 0; font-size: 1.1rem; font-weight: 800; }
+    .price-value { margin: 0.25rem 0 0.7rem; font-size: 1.8rem; font-weight: 800; }
+
+    .calc-wrap {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    .calc-panel {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: 1rem;
+    }
+
+    .calc-grid {
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: 1fr;
+    }
+
+    .calc-field {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .calc-field label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .calc-field input,
+    .calc-field select {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #10241f;
+      color: var(--text);
+      padding: 0.65rem 0.7rem;
+      font: inherit;
+    }
+
+    .calc-field select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image:
+        linear-gradient(45deg, transparent 50%, #a8c6bc 50%),
+        linear-gradient(135deg, #a8c6bc 50%, transparent 50%),
+        linear-gradient(to right, rgba(47, 79, 70, 0.95), rgba(47, 79, 70, 0.95));
+      background-position:
+        calc(100% - 17px) calc(50% - 3px),
+        calc(100% - 12px) calc(50% - 3px),
+        calc(100% - 2.3rem) 50%;
+      background-size: 5px 5px, 5px 5px, 1px 1.55rem;
+      background-repeat: no-repeat;
+      padding-right: 2.7rem;
+      cursor: pointer;
+    }
+
+    .calc-field input:focus-visible,
+    .calc-field select:focus-visible {
+      outline: 2px solid rgba(62, 166, 135, 0.5);
+      outline-offset: 1px;
+      border-color: rgba(62, 166, 135, 0.6);
+    }
+
+    .calc-field input[type="range"] {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      accent-color: var(--primary);
+    }
+
+    .slider-val {
+      display: inline-block;
+      min-width: 2.1rem;
+      padding: 0.08rem 0.45rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #10241f;
+      color: var(--text);
+      text-align: center;
+      font-size: 0.84rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .calc-result { display: grid; gap: 0.65rem; }
+
+    .calc-total {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    .calc-breakdown {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.45rem;
+      color: var(--text-muted);
+    }
+
+    .calc-breakdown li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px dashed var(--border);
+      padding-bottom: 0.35rem;
+      font-size: 0.95rem;
+    }
+
+    .cta-band {
+      border: 1px solid rgba(110, 183, 160, 0.45);
+      border-radius: var(--radius);
+      background: linear-gradient(140deg, rgba(47,143,114,0.2), rgba(110,183,160,0.15));
+      padding: 1.2rem;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 1.3rem 0 2.2rem;
+      color: var(--text-muted);
+      font-size: 0.93rem;
+    }
+
+    .footer a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .footer a:hover,
+    .footer a:focus-visible { text-decoration: underline; }
+
+    @media (min-width: 760px) {
+      .hero-grid { grid-template-columns: 1.15fr 0.85fr; }
+      .split { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .pricing { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .calc-wrap { grid-template-columns: 1.15fr 0.85fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" aria-label="Nagłówek strony">
+    <div class="container nav-wrap">
+      <a class="brand" href="./index.html#top">Po pierwsze: zysk</a>
+      <nav class="nav" aria-label="Nawigacja">
+        <a href="#porownanie">Ryczałt vs KPiR</a>
+        <a href="./kpir-ksiega-przychodow-i-rozchodow.html">KPiR</a>
+        <a href="#pakiety">Pakiety</a>
+        <a href="#kalkulator">Kalkulator</a>
+        <a class="btn btn-primary" href="./index.html#kontakt">Formularz kontaktowy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Ryczałt ewidencjonowany: kiedy ma sens, a kiedy lepiej wybrać KPiR?</h1>
+          <p class="lead">Ryczałt to uproszczona forma opodatkowania: podatek płacisz od przychodu, bez rozliczania kosztów uzyskania przychodu. To może być bardzo korzystne przy odpowiedniej strukturze marży i rodzaju usług.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#kalkulator">Policz orientacyjną cenę</a>
+            <a class="btn btn-ghost" href="./index.html#kontakt">Przejdź do formularza kontaktowego</a>
+          </div>
+          <p class="small-note">Aktualizacja treści: 15.02.2026. Dane prawno-podatkowe opieramy o oficjalne źródła MF.</p>
+        </div>
+        <aside class="hero-note" aria-label="Najważniejsze informacje">
+          <p><strong>W skrócie:</strong></p>
+          <ul class="list" style="margin-top:0.55rem;">
+            <li>Ryczałt jest dostępny m.in. dla JDG i wybranych spółek osobowych.</li>
+            <li>Limit przychodów do ryczałtu na 2026 r.: 2 000 000 EUR (8 517 200 PLN).</li>
+            <li>Stawka zależy od rodzaju przychodu i klasyfikacji PKWiU.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="porownanie" class="container">
+      <h2>Ryczałt vs KPiR - szybkie porównanie</h2>
+      <p class="lead" style="margin-top:0;">Poniżej masz praktyczne zestawienie. Największa różnica: w ryczałcie nie rozliczasz kosztów, a w KPiR podstawa to dochód (przychód minus koszty).</p>
+      <div class="compare-wrap" style="margin-top:1rem;">
+        <table aria-label="Porównanie ryczałtu i KPiR">
+          <thead>
+            <tr>
+              <th>Obszar</th>
+              <th>Ryczałt ewidencjonowany</th>
+              <th>KPiR (skala/liniowy)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Podstawa opodatkowania</td>
+              <td>Przychód</td>
+              <td>Dochód (przychód - koszty)</td>
+            </tr>
+            <tr>
+              <td>Koszty uzyskania przychodu</td>
+              <td>Nie są rozliczane podatkowo</td>
+              <td>Są rozliczane podatkowo</td>
+            </tr>
+            <tr>
+              <td>Stawki podatku</td>
+              <td>Stawki ryczałtu zależne od rodzaju przychodu (m.in. 3%, 5.5%, 8.5%, 10%, 12%, 14%, 15%, 17%)</td>
+              <td>Skala: 12% i 32% albo podatek liniowy 19%</td>
+            </tr>
+            <tr>
+              <td>Podatek przy stracie</td>
+              <td>Co do zasady występuje przy przychodzie</td>
+              <td>Przy stracie dochodowej podatek dochodowy nie wystąpi</td>
+            </tr>
+            <tr>
+              <td>Ewidencje</td>
+              <td>Ewidencja przychodów + wykaz środków trwałych i WNiP</td>
+              <td>Ewidencja przychodów i kosztów (KPiR) + ST i wyposażenie</td>
+            </tr>
+            <tr>
+              <td>Rozliczenia w trakcie roku</td>
+              <td>Miesięcznie lub kwartalnie (po spełnieniu warunków)</td>
+              <td>Zaliczki miesięczne lub kwartalne</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="split">
+        <article class="card">
+          <h2 style="margin-top:0;">Kiedy ryczałt zwykle ma sens?</h2>
+          <ul class="list">
+            <li>Masz relatywnie niskie koszty w stosunku do przychodu.</li>
+            <li>Twoja działalność wpada w korzystną stawkę ryczałtu.</li>
+            <li>Chcesz prostszego modelu rozliczeń i przewidywalności.</li>
+            <li>Prowadzisz najem i zależy Ci na prostym rozliczeniu przychodu.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2 style="margin-top:0;">Kiedy częściej wygrywa KPiR?</h2>
+          <ul class="list">
+            <li>Masz wysokie koszty uzyskania przychodu.</li>
+            <li>Planujesz inwestycje i chcesz mocno pracować na kosztach.</li>
+            <li>Występują miesiące z niską marżą lub stratą.</li>
+            <li>Potrzebujesz szerszej optymalizacji w oparciu o koszty.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="limit-band">
+        <h2 style="margin-top:0;">Limity i stawki - stan na 2026</h2>
+        <div class="stats">
+          <article class="stat">
+            <strong>Limit do ryczałtu w 2026 r.</strong>
+            <p>2 000 000 EUR przychodu za 2025 r. (8 517 200 PLN wg kursu NBP do przeliczenia limitów).</p>
+          </article>
+          <article class="stat">
+            <strong>Limit kwartalnego ryczałtu w 2026 r.</strong>
+            <p>200 000 EUR przychodu za 2025 r. (851 720 PLN).</p>
+          </article>
+        </div>
+        <p class="small-note" style="margin-top:0.9rem;">Uwaga: stawkę ryczałtu ustala się po rodzaju przychodu i PKWiU. Dlatego finalną kwalifikację zawsze potwierdzamy na starcie współpracy.</p>
+      </div>
+    </section>
+
+    <section id="pakiety" class="container">
+      <h2>Pakiety ryczałtowe</h2>
+      <p class="lead" style="margin-top:0;">Jasne zasady: w pakiecie jest limit dokumentów rozliczanych w biurze. Ponad limit: 4 PLN netto za dokument.</p>
+      <div class="pricing" style="margin-top:1rem;">
+        <article class="price-card" aria-label="Pakiet JDG RYCZAŁT BEZ VAT">
+          <p class="price-name">JDG RYCZAŁT BEZ VAT</p>
+          <p class="price-value">149 PLN netto / mies.</p>
+          <ul class="list">
+            <li>Ryczałt ewidencjonowany</li>
+            <li>Dokumenty rozliczane w biurze do 25 / mies.</li>
+            <li>Dopłata ponad limit: 4 PLN / dokument</li>
+          </ul>
+          <a class="btn btn-primary" href="#kalkulator" style="margin-top:1rem;">Policz cenę</a>
+        </article>
+        <article class="price-card" aria-label="Pakiet JDG RYCZAŁT Z VAT">
+          <p class="price-name">JDG RYCZAŁT Z VAT</p>
+          <p class="price-value">249 PLN netto / mies.</p>
+          <ul class="list">
+            <li>Ryczałt ewidencjonowany + VAT</li>
+            <li>Dokumenty rozliczane w biurze do 25 / mies.</li>
+            <li>Dopłata ponad limit: 4 PLN / dokument</li>
+          </ul>
+          <a class="btn btn-ghost" href="#kalkulator" style="margin-top:1rem;">Policz cenę</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="kalkulator" class="container">
+      <h2>Kalkulator ryczałtu</h2>
+      <p class="lead" style="margin-top:0;">Kalkulator orientacyjny dla pakietów ryczałtowych. Finalna oferta zależy od zakresu i procesu obsługi.</p>
+      <div class="calc-wrap" style="margin-top:1rem;">
+        <article class="calc-panel">
+          <form id="ryczalt-calc-form" class="calc-grid" aria-label="Kalkulator ryczałtu">
+            <div class="calc-field">
+              <label for="ryc-pkg">Pakiet ryczałtu</label>
+              <select id="ryc-pkg" name="pakiet_ryczalt">
+                <option value="JDG_RYCZALT_BEZ_VAT">JDG RYCZAŁT BEZ VAT (149)</option>
+                <option value="JDG_RYCZALT_Z_VAT">JDG RYCZAŁT Z VAT (249)</option>
+              </select>
+            </div>
+
+            <div class="calc-field">
+              <label for="ryc-docs">Dokumenty rozliczane w biurze / mies. <span class="slider-val" id="ryc-docs-val">25</span></label>
+              <input id="ryc-docs" type="range" min="0" max="400" step="1" value="25">
+            </div>
+
+            <div class="calc-field">
+              <label for="ryc-employees">Liczba pracowników <span class="slider-val" id="ryc-employees-val">0</span></label>
+              <input id="ryc-employees" type="range" min="0" max="40" step="1" value="0">
+            </div>
+          </form>
+        </article>
+
+        <aside class="calc-panel calc-result" aria-live="polite">
+          <p style="margin:0;color:var(--text-muted);font-size:0.93rem;">Cena orientacyjna netto / mies.</p>
+          <p class="calc-total" id="ryc-total">0 PLN</p>
+          <ul class="calc-breakdown">
+            <li><span>Cena bazowa pakietu</span><strong id="ryc-base">0 PLN</strong></li>
+            <li><span>Dopłaty ponad limit</span><strong id="ryc-over">0 PLN</strong></li>
+            <li><span>Kadry i place</span><strong id="ryc-hr">0 PLN</strong></li>
+          </ul>
+          <a class="btn btn-primary" id="ryc-contact-cta" href="./index.html#kontakt" style="margin-top:0.45rem;">Przejdź do formularza kontaktowego</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="cta-band">
+        <h2>Masz wątpliwości, jaką formę opodatkowania wybrać?</h2>
+        <p class="lead" style="margin-top:0;">Napisz do nas przez formularz. Sprawdzimy Twój model przychodów i kosztów, żeby porównanie ryczałt vs KPiR było oparte na liczbach, a nie domysłach.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="./index.html#kontakt">Przejdź do formularza kontaktowego</a>
+          <a class="btn btn-ghost" href="./index.html#kalkulator">Wróć do głównego kalkulatora</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p style="margin:0;">Copyright <span id="year"></span> Po pierwsze: zysk.</p>
+      <p class="small-note">Źródła: podatki.gov.pl (Stawki i limity PIT, Opodatkowanie ryczałtem od przychodów ewidencjonowanych), aktualizacje z grudnia 2025 i lutego 2026.</p>
+      <p class="small-note"><a href="./polityka-prywatnosci.html">Polityka prywatności</a> | <a href="#" data-open-cookie-settings>Ustawienia cookies</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const rycCfg = {
+      JDG_RYCZALT_BEZ_VAT: { base: 149 },
+      JDG_RYCZALT_Z_VAT: { base: 249 }
+    };
+
+    const rycEls = {
+      form: document.getElementById('ryczalt-calc-form'),
+      pkg: document.getElementById('ryc-pkg'),
+      docs: document.getElementById('ryc-docs'),
+      docsVal: document.getElementById('ryc-docs-val'),
+      employees: document.getElementById('ryc-employees'),
+      employeesVal: document.getElementById('ryc-employees-val'),
+      total: document.getElementById('ryc-total'),
+      base: document.getElementById('ryc-base'),
+      over: document.getElementById('ryc-over'),
+      hr: document.getElementById('ryc-hr'),
+      cta: document.getElementById('ryc-contact-cta')
+    };
+
+    const fmtPln = (v) => `${Math.round(v).toLocaleString('pl-PL')} PLN`;
+    const readInt = (el) => {
+      const parsed = Number.parseInt(el.value, 10);
+      return Number.isFinite(parsed) && parsed > 0 ? parsed : 0;
+    };
+
+    const canTrackAnalytics = () => Boolean(window.PPZConsent && typeof window.PPZConsent.hasConsent === 'function' && window.PPZConsent.hasConsent('analytics'));
+    const canTrackMarketing = () => Boolean(window.PPZConsent && typeof window.PPZConsent.hasConsent === 'function' && window.PPZConsent.hasConsent('marketing'));
+
+    const trackEvent = (name, payload = {}) => {
+      const analyticsAllowed = canTrackAnalytics();
+      const marketingAllowed = canTrackMarketing();
+
+      if (analyticsAllowed && Array.isArray(window.dataLayer)) {
+        window.dataLayer.push({ event: name, ...payload });
+      }
+      if (analyticsAllowed && typeof window.gtag === 'function') {
+        window.gtag('event', name, payload);
+      }
+      if (marketingAllowed && typeof window.fbq === 'function') {
+        window.fbq('trackCustom', name, payload);
+      }
+    };
+
+    let started = false;
+    let lastTotal = null;
+
+    const syncValues = () => {
+      if (rycEls.docsVal) rycEls.docsVal.textContent = readInt(rycEls.docs).toLocaleString('pl-PL');
+      if (rycEls.employeesVal) rycEls.employeesVal.textContent = readInt(rycEls.employees).toLocaleString('pl-PL');
+    };
+
+    const calc = () => {
+      const selected = rycCfg[rycEls.pkg.value] || rycCfg.JDG_RYCZALT_BEZ_VAT;
+      const base = selected.base;
+      const docs = readInt(rycEls.docs);
+      const over = Math.max(0, docs - 25) * 4;
+      const hr = readInt(rycEls.employees) * 40;
+      const total = base + over + hr;
+
+      rycEls.base.textContent = fmtPln(base);
+      rycEls.over.textContent = fmtPln(over);
+      rycEls.hr.textContent = fmtPln(hr);
+      rycEls.total.textContent = fmtPln(total);
+
+      if (lastTotal !== total) {
+        lastTotal = total;
+        trackEvent('ryczalt_kalkulator_wynik', {
+          pakiet: rycEls.pkg.value,
+          cena: total,
+          doplata_ponad_limit: over,
+          doplata_kadry: hr
+        });
+      }
+    };
+
+    if (rycEls.form) {
+      rycEls.form.querySelectorAll('input, select').forEach((el) => {
+        el.addEventListener('input', () => {
+          if (!started) {
+            started = true;
+            trackEvent('ryczalt_kalkulator_start');
+          }
+          syncValues();
+          calc();
+        });
+        el.addEventListener('change', () => {
+          if (!started) {
+            started = true;
+            trackEvent('ryczalt_kalkulator_start');
+          }
+          syncValues();
+          calc();
+        });
+      });
+      syncValues();
+      calc();
+    }
+
+    if (rycEls.cta) {
+      rycEls.cta.addEventListener('click', () => {
+        trackEvent('ryczalt_kalkulator_submit', {
+          pakiet: rycEls.pkg.value,
+          cena: lastTotal || 0
+        });
+      });
+    }
+  </script>
+</body>
+</html>
