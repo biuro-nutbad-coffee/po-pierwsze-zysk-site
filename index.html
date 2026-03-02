@@ -103,6 +103,58 @@
     .nav a:hover,
     .nav a:focus-visible { color: var(--text); }
 
+    .nav-dropdown {
+      position: relative;
+      color: var(--text-muted);
+      font-size: 0.94rem;
+    }
+
+    .nav-dropdown > summary {
+      list-style: none;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .nav-dropdown > summary::-webkit-details-marker { display: none; }
+
+    .nav-dropdown > summary::after {
+      content: " ▾";
+      font-size: 0.85em;
+    }
+
+    .nav-dropdown[open] > summary,
+    .nav-dropdown > summary:hover,
+    .nav-dropdown > summary:focus-visible { color: var(--text); }
+
+    .nav-dropdown-list {
+      position: absolute;
+      top: calc(100% + 0.45rem);
+      right: 0;
+      min-width: 230px;
+      padding: 0.45rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(20, 42, 36, 0.98);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
+      display: grid;
+      gap: 0.2rem;
+      z-index: 30;
+    }
+
+    .nav-dropdown-list a {
+      display: block;
+      border-radius: 8px;
+      padding: 0.42rem 0.55rem;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .nav-dropdown-list a:hover,
+    .nav-dropdown-list a:focus-visible {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -748,7 +800,15 @@
       <a class="brand" href="#top">Po pierwsze zysk - nowoczesna księgowość</a>
       <nav class="nav" aria-label="Nawigacja główna">
         <a href="#cennik">Cennik</a>
-        <a href="#lokalizacje">Lokalizacje</a>
+        <details class="nav-dropdown">
+          <summary>Lokalizacje</summary>
+          <div class="nav-dropdown-list">
+            <a href="./biuro-rachunkowe-slupsk.html">Biuro rachunkowe Słupsk</a>
+            <a href="./biuro-rachunkowe-bytow.html">Biuro rachunkowe Bytów</a>
+            <a href="./biuro-rachunkowe-ustka.html">Biuro rachunkowe Ustka</a>
+            <a href="#lokalizacje">Wszystkie lokalizacje na stronie</a>
+          </div>
+        </details>
         <a href="#kalkulator">Kalkulator</a>
         <a href="./ryczalt-ewidencjonowany.html">Ryczałt</a>
         <a href="./kpir-ksiega-przychodow-i-rozchodow.html">KPiR</a>
@@ -778,28 +838,6 @@
             <li>Brak porządku w dokumentach kosztuje czas i pieniądze właściciela.</li>
           </ul>
         </aside>
-      </div>
-    </section>
-
-    <section id="lokalizacje" class="container">
-      <h2 class="reveal">Obsługiwane lokalizacje</h2>
-      <p class="section-intro reveal">Jeśli szukasz biura rachunkowego lokalnie, przejdź do dedykowanej strony miasta.</p>
-      <div class="cards">
-        <article class="card reveal">
-          <strong>Biuro rachunkowe Słupsk</strong>
-          <p>JDG i mikro spółki z o.o., jasne pakiety i szybki start współpracy.</p>
-          <a class="btn btn-ghost" href="./biuro-rachunkowe-slupsk.html">Przejdź do strony Słupsk</a>
-        </article>
-        <article class="card reveal">
-          <strong>Biuro rachunkowe Bytów</strong>
-          <p>Księgowość dla firm z Bytowa i okolic, z jasnym zakresem i terminami.</p>
-          <a class="btn btn-ghost" href="./biuro-rachunkowe-bytow.html">Przejdź do strony Bytów</a>
-        </article>
-        <article class="card reveal">
-          <strong>Biuro rachunkowe Ustka</strong>
-          <p>Obsługa firm z Ustki, także przy sezonowych wzrostach liczby dokumentów.</p>
-          <a class="btn btn-ghost" href="./biuro-rachunkowe-ustka.html">Przejdź do strony Ustka</a>
-        </article>
       </div>
     </section>
 
@@ -1317,6 +1355,28 @@
             <p>Obsługujemy lokalnie i zdalnie (cały kraj).</p>
           </aside>
         </div>
+      </div>
+    </section>
+
+    <section id="lokalizacje" class="container">
+      <h2 class="reveal">Obsługiwane lokalizacje</h2>
+      <p class="section-intro reveal">Jeśli szukasz biura rachunkowego lokalnie, przejdź do dedykowanej strony miasta.</p>
+      <div class="cards">
+        <article class="card reveal">
+          <strong>Biuro rachunkowe Słupsk</strong>
+          <p>JDG i mikro spółki z o.o., jasne pakiety i szybki start współpracy.</p>
+          <a class="btn btn-ghost" href="./biuro-rachunkowe-slupsk.html">Przejdź do strony Słupsk</a>
+        </article>
+        <article class="card reveal">
+          <strong>Biuro rachunkowe Bytów</strong>
+          <p>Księgowość dla firm z Bytowa i okolic, z jasnym zakresem i terminami.</p>
+          <a class="btn btn-ghost" href="./biuro-rachunkowe-bytow.html">Przejdź do strony Bytów</a>
+        </article>
+        <article class="card reveal">
+          <strong>Biuro rachunkowe Ustka</strong>
+          <p>Obsługa firm z Ustki, także przy sezonowych wzrostach liczby dokumentów.</p>
+          <a class="btn btn-ghost" href="./biuro-rachunkowe-ustka.html">Przejdź do strony Ustka</a>
+        </article>
       </div>
     </section>
   </main>
