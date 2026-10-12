@@ -148,3 +148,15 @@
   to = "/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/ksiegowosc-dla-gastronomii"
+  to = "/ksiegowosc-dla-gastronomii/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ksiegowosc-dla-gastronomii/index.html"
+  to = "/ksiegowosc-dla-gastronomii/"
+  status = 301
+  force = true
