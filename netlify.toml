@@ -1,2 +1,150 @@
 [build]
   publish = "."
+
+# Keep links consistent with sitemap and canonical URLs.
+[build.processing.html]
+  pretty_urls = false
+
+[[redirects]]
+  from = "/polityka-prywatnosci"
+  to = "/polityka-prywatnosci.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/polityka-prywatnosci/"
+  to = "/polityka-prywatnosci.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dziekujemy"
+  to = "/dziekujemy.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dziekujemy/"
+  to = "/dziekujemy.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/biuro-rachunkowe-slupsk"
+  to = "/biuro-rachunkowe-slupsk.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/biuro-rachunkowe-slupsk/"
+  to = "/biuro-rachunkowe-slupsk.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/biuro-rachunkowe-ustka"
+  to = "/biuro-rachunkowe-ustka.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/biuro-rachunkowe-ustka/"
+  to = "/biuro-rachunkowe-ustka.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/biuro-rachunkowe-bytow"
+  to = "/biuro-rachunkowe-bytow.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/biuro-rachunkowe-bytow/"
+  to = "/biuro-rachunkowe-bytow.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ryczalt-ewidencjonowany"
+  to = "/ryczalt-ewidencjonowany.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ryczalt-ewidencjonowany/"
+  to = "/ryczalt-ewidencjonowany.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/kpir-ksiega-przychodow-i-rozchodow"
+  to = "/kpir-ksiega-przychodow-i-rozchodow.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/kpir-ksiega-przychodow-i-rozchodow/"
+  to = "/kpir-ksiega-przychodow-i-rozchodow.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index_v1_clean_standard.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index_v1_clean_standard"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index_v1_clean_standard/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index_v2_dark_standard.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index_v2_dark_standard"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index_v2_dark_standard/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index_v3_bold_standard.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index_v3_bold_standard"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index_v3_bold_standard/"
+  to = "/"
+  status = 301
+  force = true
