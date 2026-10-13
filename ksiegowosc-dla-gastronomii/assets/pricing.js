@@ -14,4 +14,14 @@ $('price-error').textContent='';range.value=String(d);range.style.setProperty('-
 $('price-basic').textContent=pln(quote.basicTotal);$('price-breakdown').textContent='Baza '+pln(b)+' + dokumenty ponad limit '+pln(extra)+' + raport '+pln(config.basicReportFee);
 $('price-extended').textContent=pln(quote.extendedTotal);$('price-extended-label').textContent='netto / miesiąc';$('price-reporting-note').textContent='Obsługa księgowa '+pln(total)+' + raportowanie '+pln(config.reportingMonthlyFee)+'.';transfer();}
 range.addEventListener('input',()=>{docs.value=range.value;update();});docs.addEventListener('input',update);method.addEventListener('change',update);document.querySelectorAll('input[name="tax-method"],input[name="tax-vat"]').forEach(el=>el.addEventListener('change',()=>{method.value=document.querySelector('input[name="tax-method"]:checked').value+(document.querySelector('input[name="tax-vat"]:checked').value==='vat'?'_vat':'');update();}));document.querySelectorAll('[data-select-package]').forEach(a=>a.addEventListener('click',()=>{selected=a.dataset.selectPackage;transfer();}));update();
+
+// Restore only validated calculator inputs from a shared offer; never trust a supplied price.
+const incoming=new URLSearchParams(location.search),incomingDocs=incoming.get('docs'),incomingMethod=incoming.get('method'),incomingPackage=incoming.get('package');
+if(incomingDocs!==null&&/^\d{1,3}$/.test(incomingDocs)&&Number(incomingDocs)<=300&&Object.prototype.hasOwnProperty.call(config.bases,incomingMethod)){
+ docs.value=incomingDocs;method.value=incomingMethod;
+ document.querySelector('input[name="tax-method"][value="'+(incomingMethod.startsWith('kpir')?'kpir':'ryczalt')+'"]').checked=true;
+ document.querySelector('input[name="tax-vat"][value="'+(incomingMethod.endsWith('_vat')?'vat':'no_vat')+'"]').checked=true;
+ if(document.getElementById('gastro-form')&&['Rozliczenia','Rozliczenia i decyzje'].includes(incomingPackage))selected=incomingPackage;
+ update();
+}
 })();
