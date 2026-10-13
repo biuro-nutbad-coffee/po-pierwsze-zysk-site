@@ -1,4 +1,5 @@
 [build]
+  command = "python3 scripts/build_offer_embed.py"
   publish = "."
 
 # Keep links consistent with sitemap and canonical URLs.
@@ -154,3 +155,9 @@
   to = "/ksiegowosc-dla-gastronomii/"
   status = 301
   force = true
+
+[[headers]]
+  for = "/ksiegowosc-dla-gastronomii/oferta-osadzona.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Robots-Tag = "noindex, follow"
