@@ -24,7 +24,7 @@
    if(!response.ok)throw Error('send');
    track('generate_lead');
    if(window.PPZConsent&&window.PPZConsent.hasConsent('marketing')&&typeof window.fbq==='function')window.fbq('track','Lead',{content_name:'ksiegowosc_gastro'});
-   status.textContent='Zapytanie zostało wysłane. Dziękujemy!';form.reset();
+   status.textContent='Zapytanie zostało wysłane. Dziękujemy!';form.reset();var quote=document.getElementById('selected-quote');if(quote)quote.hidden=true;
    button.textContent='Zapytanie wysłane';
   }catch(err){status.textContent='Nie udało się wysłać formularza. Spróbuj ponownie lub zadzwoń: 513 013 580.';button.disabled=false;}
  });

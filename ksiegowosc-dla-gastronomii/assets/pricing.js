@@ -1,0 +1,17 @@
+(function(){
+'use strict';
+// Source: production site checkout 7b0c2f3, index.html calcConfig/calculatePrice.
+// Reporting fees and scope approved by owner 2026-10-13. Extended fee replaces basic fee.
+const config={bases:{ryczalt:149,ryczalt_vat:249,kpir:249,kpir_vat:349},includedDocs:25,extraDoc:4,employeeAddon:50,basicReportFee:100,reportingMonthlyFee:500,reportingSetupFee:600};
+const $=id=>document.getElementById(id);
+const method=$('price-method'),docs=$('price-docs'),range=$('price-range');
+const pln=v=>v.toLocaleString('pl-PL')+' zł';
+let quote=null,selected='';
+function number(el){if(el.value.trim()==='')return null;let n=Number(el.value);return Number.isInteger(n)&&n>=Number(el.min)&&n<=Number(el.max)?n:null;}
+function transfer(){if(!selected)return;const f=$('gastro-form'),extended=selected==='Rozliczenia i decyzje';f.elements.wybrany_pakiet.value=selected;f.elements.parametry_wyceny.value=quote?JSON.stringify({...quote,selectedPackage:selected,monthlyTotal:extended?quote.extendedTotal:quote.basicTotal,setupFee:extended?config.reportingSetupFee:0}):'';$('selected-quote').hidden=false;$('selected-quote').textContent=quote?'Wybrano: '+selected+'. '+quote.docs+' dokumentów. '+pln(extended?quote.extendedTotal:quote.basicTotal)+' netto/mies. Kadry i płace osobno: +50 zł netto/os./mies.'+(extended?' Uruchomienie raportowania: '+pln(config.reportingSetupFee)+' netto jednorazowo.':''):'Uzupełnij poprawne parametry kalkulatora.';}
+function update(){const d=number(docs);if(d===null){quote=null;$('price-basic').textContent='—';$('price-extended').textContent='—';$('price-breakdown').textContent='Uzupełnij poprawne parametry.';$('price-reporting-note').textContent='Uzupełnij poprawne parametry.';$('price-error').textContent='Wpisz pełną liczbę dokumentów od 0 do 300.';transfer();return;}
+$('price-error').textContent='';range.value=String(d);range.style.setProperty('--fill',((d-Number(range.min))/(Number(range.max)-Number(range.min))*100)+'%');range.setAttribute('aria-valuetext',d+' dokumentów miesięcznie');const b=config.bases[method.value],extra=Math.max(0,d-config.includedDocs)*config.extraDoc,total=b+extra;quote={method:method.value,docs:d,employeeUnitPrice:config.employeeAddon,employeesIncluded:false,baseTotal:total,basicReportFee:config.basicReportFee,reportingFee:config.reportingMonthlyFee,basicTotal:total+config.basicReportFee,extendedTotal:total+config.reportingMonthlyFee};
+$('price-basic').textContent=pln(quote.basicTotal);$('price-breakdown').textContent='Baza '+pln(b)+' + dokumenty ponad limit '+pln(extra)+' + raport '+pln(config.basicReportFee);
+$('price-extended').textContent=pln(quote.extendedTotal);$('price-extended-label').textContent='netto / miesiąc';$('price-reporting-note').textContent='Obsługa księgowa '+pln(total)+' + raportowanie '+pln(config.reportingMonthlyFee)+'.';transfer();}
+range.addEventListener('input',()=>{docs.value=range.value;update();});docs.addEventListener('input',update);method.addEventListener('change',update);document.querySelectorAll('input[name="tax-method"],input[name="tax-vat"]').forEach(el=>el.addEventListener('change',()=>{method.value=document.querySelector('input[name="tax-method"]:checked').value+(document.querySelector('input[name="tax-vat"]:checked').value==='vat'?'_vat':'');update();}));document.querySelectorAll('[data-select-package]').forEach(a=>a.addEventListener('click',()=>{selected=a.dataset.selectPackage;transfer();}));update();
+})();
