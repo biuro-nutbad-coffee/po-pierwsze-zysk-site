@@ -32,37 +32,37 @@
 
 [[redirects]]
   from = "/biuro-rachunkowe-slupsk"
-  to = "/biuro-rachunkowe-slupsk.html"
+  to = "/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/biuro-rachunkowe-slupsk/"
-  to = "/biuro-rachunkowe-slupsk.html"
+  to = "/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/biuro-rachunkowe-ustka"
-  to = "/biuro-rachunkowe-ustka.html"
+  to = "/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/biuro-rachunkowe-ustka/"
-  to = "/biuro-rachunkowe-ustka.html"
+  to = "/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/biuro-rachunkowe-bytow"
-  to = "/biuro-rachunkowe-bytow.html"
+  to = "/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/biuro-rachunkowe-bytow/"
-  to = "/biuro-rachunkowe-bytow.html"
+  to = "/"
   status = 301
   force = true
 
@@ -161,3 +161,21 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
     X-Robots-Tag = "noindex, follow"
+
+[[redirects]]
+  from = "/biuro-rachunkowe-slupsk.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/biuro-rachunkowe-bytow.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/biuro-rachunkowe-ustka.html"
+  to = "/"
+  status = 301
+  force = true

@@ -800,15 +800,7 @@
       <a class="brand" href="#top">Po pierwsze zysk - nowoczesna księgowość</a>
       <nav class="nav" aria-label="Nawigacja główna">
         <a href="#cennik">Cennik</a>
-        <details class="nav-dropdown">
-          <summary>Lokalizacje</summary>
-          <div class="nav-dropdown-list">
-            <a href="./biuro-rachunkowe-slupsk.html">Biuro rachunkowe Słupsk</a>
-            <a href="./biuro-rachunkowe-bytow.html">Biuro rachunkowe Bytów</a>
-            <a href="./biuro-rachunkowe-ustka.html">Biuro rachunkowe Ustka</a>
-            <a href="#lokalizacje">Wszystkie lokalizacje na stronie</a>
-          </div>
-        </details>
+        <a href="#lokalizacje">Obszar obsługi</a>
         <a href="#kalkulator">Kalkulator</a>
         <a href="./ryczalt-ewidencjonowany.html">Ryczałt</a>
         <a href="./kpir-ksiega-przychodow-i-rozchodow.html">KPiR</a>
@@ -907,7 +899,7 @@
           <strong>Dodatki i zasady</strong>
           <ul class="list" style="margin-top:0.6rem;">
             <li>Dokumenty/FV sprzedażowe wystawione samodzielnie: bez limitu i bez dopłaty.</li>
-            <li>Kadry i place: 40 PLN netto / pracownik / mies.</li>
+            <li>Kadry i place: 50 PLN netto / pracownik / mies.</li>
             <li>Raport kasowy i walutowe rozliczane jako pozycje osobne.</li>
             <li>Przejęcie księgowości z innego biura realizujemy krok po kroku według checklisty.</li>
             <li>SLA v1: potwierdzenie wiadomości tego samego dnia roboczego.</li>
@@ -1147,7 +1139,7 @@
         </article>
         <article class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false" aria-controls="faq-a9" id="faq-q9">Ile kosztuje obsługa pracowników?<span class="chevron">+</span></button>
-          <div class="faq-a" id="faq-a9" role="region" aria-labelledby="faq-q9"><p>Pozycja dodatkowa: 40 PLN netto / pracownik / miesiąc.</p><p>Zatrudnienie i zwolnienie: 50 PLN netto za zdarzenie.</p></div>
+          <div class="faq-a" id="faq-a9" role="region" aria-labelledby="faq-q9"><p>Pozycja dodatkowa: 50 PLN netto / pracownik / miesiąc.</p><p>Zatrudnienie i zwolnienie: 50 PLN netto za zdarzenie.</p></div>
         </article>
         <article class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false" aria-controls="faq-a10" id="faq-q10">Jak wygląda przejęcie księgowości z innego biura?<span class="chevron">+</span></button>
@@ -1359,24 +1351,11 @@
     </section>
 
     <section id="lokalizacje" class="container">
-      <h2 class="reveal">Obsługiwane lokalizacje</h2>
-      <p class="section-intro reveal">Jeśli szukasz biura rachunkowego lokalnie, przejdź do dedykowanej strony miasta.</p>
-      <div class="cards">
-        <article class="card reveal">
-          <strong>Biuro rachunkowe Słupsk</strong>
-          <p>JDG i mikro spółki z o.o., jasne pakiety i szybki start współpracy.</p>
-          <a class="btn btn-ghost" href="./biuro-rachunkowe-slupsk.html">Przejdź do strony Słupsk</a>
-        </article>
-        <article class="card reveal">
-          <strong>Biuro rachunkowe Bytów</strong>
-          <p>Księgowość dla firm z Bytowa i okolic, z jasnym zakresem i terminami.</p>
-          <a class="btn btn-ghost" href="./biuro-rachunkowe-bytow.html">Przejdź do strony Bytów</a>
-        </article>
-        <article class="card reveal">
-          <strong>Biuro rachunkowe Ustka</strong>
-          <p>Obsługa firm z Ustki, także przy sezonowych wzrostach liczby dokumentów.</p>
-          <a class="btn btn-ghost" href="./biuro-rachunkowe-ustka.html">Przejdź do strony Ustka</a>
-        </article>
+      <h2 class="reveal">Księgowość dla firm ze Słupska, Bytowa i Ustki</h2>
+      <p class="section-intro reveal">Nasze biuro mieści się w Słupsku. Obsługujemy firmy ze Słupska, Bytowa i Ustki oraz zdalnie z całej Polski — według tego samego zakresu usług i cennika.</p>
+      <div class="card reveal">
+        <p>Prowadzimy księgowość JDG i mikro spółek z o.o. Dokumenty przekazujesz elektronicznie, a przed rozpoczęciem współpracy ustalamy pakiet, terminy i osobę kontaktową. Przy zmianie biura uzgadniamy przejęcie dokumentacji i odpowiedzialność za poszczególne okresy.</p>
+        <a class="btn btn-ghost" href="#kontakt">Porozmawiaj o obsłudze swojej firmy</a>
       </div>
     </section>
   </main>
@@ -1386,9 +1365,7 @@
       <div class="footer-links">
         <a href="./polityka-prywatnosci.html">Polityka prywatności</a>
         <a href="#" data-open-cookie-settings>Ustawienia cookies</a>
-        <a href="./biuro-rachunkowe-slupsk.html">Słupsk</a>
-        <a href="./biuro-rachunkowe-bytow.html">Bytów</a>
-        <a href="./biuro-rachunkowe-ustka.html">Ustka</a>
+        <a href="#lokalizacje">Słupsk, Bytów, Ustka i obsługa zdalna</a>
         <a href="mailto:biuro@po-pierwsze-zysk.pl">Kontakt</a>
       </div>
       <small>Po-Pierwsze-Zysk.pl Sp. z o. o. | NIP: 8393194151 | ul. Maurycego Mochnackiego 18/36, 76-200 Słupsk</small>
@@ -1719,7 +1696,7 @@
           Math.max(0, wb - selected.wbLimit) * 2;
       }
 
-      const hr = readInt(calcEls.employees) * 40;
+      const hr = readInt(calcEls.employees) * 50;
       const fx = selected.fxAllowed ? readInt(calcEls.fx) * 4 : 0;
       const cash = selected.cashAllowed && calcEls.cashEnabled.value === '1' ? (100 + readInt(calcEls.cashDocs) * 4) : 0;
       const total = base + overLimit + hr + cash + fx;
